@@ -13,5 +13,8 @@
         "postcss": "^8.4.47",
         "axios": "^1.7.4",
         "vite": "^6.0.11"
+    },
+    "dependencies": {
+        "alpinejs": "^3.14.9"
     }
 }
