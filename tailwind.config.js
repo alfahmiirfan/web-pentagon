@@ -14,6 +14,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                // green
+                'cstm-green-900': '#018864',
+                'cstm-green-50': '#F6F8F7',
+
+                // blue
+                'cstm-blue-900': '#075186',
+            },
         },
     },
     plugins: [],
