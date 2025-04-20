@@ -10,6 +10,7 @@ return [
 
     'landing' => [
         'home' => 'home',
+        'program' => 'program',
     ],
 
 ];
