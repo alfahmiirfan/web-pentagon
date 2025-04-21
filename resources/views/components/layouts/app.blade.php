@@ -9,6 +9,10 @@
 
     <title>{{ $title ?? config('app.name') }}</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
@@ -19,6 +23,9 @@
             tailwind.config = {
                 theme: {
                     extend: {
+                        fontFamily: {
+                            primary: ['Poppins', 'sans-serif'],
+                        },
                         colors: {
                             // green
                             'cstm-green-900': '#018864',
@@ -35,7 +42,7 @@
 
 </head>
 
-<body class="flex min-h-screen w-screen flex-col overflow-x-hidden">
+<body class="flex min-h-screen w-screen flex-col overflow-x-hidden font-primary">
 
     {{ $slot }}
 
