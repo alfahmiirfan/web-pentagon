@@ -7,7 +7,7 @@
         <nav class="fixed top-0 flex w-full items-center justify-center bg-white">
             <div class="flex w-full max-w-screen-xl items-center justify-between gap-5 p-5 2xl:max-w-screen-2xl">
                 <div title="SMA Negeri 10 Kaur Pentagon" class="flex items-center justify-center gap-3">
-                    <img src="/images/landing/home/logo.png" alt="Logo" class="w-14">
+                    <img src="/images/logo.png" alt="Logo" class="w-14">
                     <h3 class="text-xl font-bold">
                         SMA Negeri 10 Kaur<br>Pentagon
                     </h3>
@@ -73,7 +73,7 @@
                 </p>
                 <div class="grid w-full grid-cols-2">
                     <div title="SMA Negeri 10 Kaur Pentagon" class="flex items-center justify-start gap-3 text-lg">
-                        <img src="/images/landing/home/logo.png" alt="Logo" class="w-12">
+                        <img src="/images/logo.png" alt="Logo" class="w-12">
                         <p class="font-medium text-cstm-blue-900">
                             SMA Negeri 10 Kaur Pentagon
                         </p>

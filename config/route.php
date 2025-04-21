@@ -13,4 +13,12 @@ return [
         'program' => 'program',
     ],
 
+    'admin' => [
+
+        'dashboard' => [
+            'home' => 'dashboard',
+        ],
+
+    ],
+
 ];
