@@ -20,7 +20,10 @@ return [
         ],
 
         'activity' => [
+            'base' => 'admin.activity.*',
+
             'home' => 'admin.activity.home',
+            'add' => 'admin.activity.add',
         ],
 
     ],

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
+use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::prefix('admin')->group(function (): void {
     // Activity
     Route::prefix('kegiatan')->group(function (): void {
         Route::get('/', [HomeActivityAdminController::class, 'view'])->name(config('route.admin.activity.home'));
+        Route::get('/tambah', [AddActivityAdminController::class, 'view'])->name(config('route.admin.activity.add'));
     });
 
 });
