@@ -19,6 +19,10 @@ return [
             'home' => 'dashboard',
         ],
 
+        'activity' => [
+            'home' => 'admin.activity.home',
+        ],
+
     ],
 
 ];
