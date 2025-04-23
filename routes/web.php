@@ -10,6 +10,7 @@ use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
+use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
@@ -68,6 +69,7 @@ Route::prefix('admin')->group(function (): void {
     // Alumni
     Route::prefix('alumni')->group(function (): void {
         Route::get('/', [HomeAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.home'));
+        Route::get('/tambah', [AddAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.add'));
     });
 
 });

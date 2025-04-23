@@ -65,6 +65,7 @@ return [
             'base' => 'admin.alumni.*',
 
             'home' => 'admin.alumni.home',
+            'add' => 'admin.alumni.add',
         ],
 
     ],
