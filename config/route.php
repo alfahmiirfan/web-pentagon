@@ -51,6 +51,7 @@ return [
             'base' => 'admin.ptk.*',
 
             'home' => 'admin.ptk.home',
+            'add' => 'admin.ptk.add',
         ],
 
     ],

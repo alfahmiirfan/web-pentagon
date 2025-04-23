@@ -11,6 +11,7 @@ use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
+use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,7 @@ Route::prefix('admin')->group(function (): void {
     // PTK
     Route::prefix('ptk')->group(function (): void {
         Route::get('/', [HomePTKAdminController::class, 'view'])->name(config('route.admin.ptk.home'));
+        Route::get('/tambah', [AddPTKAdminController::class, 'view'])->name(config('route.admin.ptk.add'));
     });
 
 });
