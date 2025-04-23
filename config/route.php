@@ -33,6 +33,12 @@ return [
             'add' => 'admin.facility.add',
         ],
 
+        'information' => [
+            'base' => 'admin.information.*',
+
+            'home' => 'admin.information.home',
+        ],
+
     ],
 
 ];

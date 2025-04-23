@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Information\HomeInformationAdminController;
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
@@ -30,6 +31,11 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('fasilitas')->group(function (): void {
         Route::get('/', [HomeFacilityAdminController::class, 'view'])->name(config('route.admin.facility.home'));
         Route::get('/tambah', [AddFacilityAdminController::class, 'view'])->name(config('route.admin.facility.add'));
+    });
+
+    // Information
+    Route::prefix('informasi')->group(function (): void {
+        Route::get('/', [HomeInformationAdminController::class, 'view'])->name(config('route.admin.information.home'));
     });
 
 });
