@@ -61,6 +61,12 @@ return [
             'add' => 'admin.achievement.add',
         ],
 
+        'alumni' => [
+            'base' => 'admin.alumni.*',
+
+            'home' => 'admin.alumni.home',
+        ],
+
     ],
 
 ];
