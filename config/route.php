@@ -26,6 +26,12 @@ return [
             'add' => 'admin.activity.add',
         ],
 
+        'facility' => [
+            'base' => 'admin.facility.*',
+
+            'home' => 'admin.facility.home',
+        ],
+
     ],
 
 ];

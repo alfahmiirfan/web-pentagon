@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
+use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
@@ -22,6 +23,11 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('kegiatan')->group(function (): void {
         Route::get('/', [HomeActivityAdminController::class, 'view'])->name(config('route.admin.activity.home'));
         Route::get('/tambah', [AddActivityAdminController::class, 'view'])->name(config('route.admin.activity.add'));
+    });
+
+    // Facility
+    Route::prefix('fasilitas')->group(function (): void {
+        Route::get('/', [HomeFacilityAdminController::class, 'view'])->name(config('route.admin.facility.home'));
     });
 
 });

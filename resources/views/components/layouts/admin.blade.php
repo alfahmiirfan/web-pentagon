@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li
-                class="{{ false ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
+                class="{{ request()->routeIs(config('route.admin.facility.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
                 <a href="">
                     Fasilitas
                 </a>
