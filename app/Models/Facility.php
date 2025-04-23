@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class Facility extends Model
 {
     use HasUuids;
 
@@ -15,7 +15,7 @@ class Activity extends Model
     | -----------------------------------------------------------------
     */
 
-    protected $table = 'activities';
+    protected $table = 'facilities';
 
     protected $fillable = [
         'image',
