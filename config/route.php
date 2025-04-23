@@ -37,6 +37,7 @@ return [
             'base' => 'admin.information.*',
 
             'home' => 'admin.information.home',
+            'add' => 'admin.information.add',
         ],
 
     ],
