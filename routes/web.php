@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\HomeInformationAdminController;
 use App\Http\Controllers\Web\Admin\Information\AddInformationAdminController;
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
@@ -54,6 +55,11 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('ptk')->group(function (): void {
         Route::get('/', [HomePTKAdminController::class, 'view'])->name(config('route.admin.ptk.home'));
         Route::get('/tambah', [AddPTKAdminController::class, 'view'])->name(config('route.admin.ptk.add'));
+    });
+
+    // Achievement
+    Route::prefix('prestasi')->group(function (): void {
+        Route::get('/', [HomeAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.home'));
     });
 
 });

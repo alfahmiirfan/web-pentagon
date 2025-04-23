@@ -54,6 +54,12 @@ return [
             'add' => 'admin.ptk.add',
         ],
 
+        'achievement' => [
+            'base' => 'admin.achievement.*',
+
+            'home' => 'admin.achievement.home',
+        ],
+
     ],
 
 ];
