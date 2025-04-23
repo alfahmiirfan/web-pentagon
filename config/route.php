@@ -47,6 +47,12 @@ return [
             'add' => 'admin.event.add',
         ],
 
+        'ptk' => [
+            'base' => 'admin.ptk.*',
+
+            'home' => 'admin.ptk.home',
+        ],
+
     ],
 
 ];
