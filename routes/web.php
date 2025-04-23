@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\HomeInformationAdminController;
+use App\Http\Controllers\Web\Admin\Achievement\AddAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\AddInformationAdminController;
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
@@ -60,6 +61,7 @@ Route::prefix('admin')->group(function (): void {
     // Achievement
     Route::prefix('prestasi')->group(function (): void {
         Route::get('/', [HomeAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.home'));
+        Route::get('/tambah', [AddAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.add'));
     });
 
 });

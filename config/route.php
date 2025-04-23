@@ -58,6 +58,7 @@ return [
             'base' => 'admin.achievement.*',
 
             'home' => 'admin.achievement.home',
+            'add' => 'admin.achievement.add',
         ],
 
     ],
