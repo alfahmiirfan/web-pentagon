@@ -31,13 +31,13 @@
             </li>
             <li
                 class="{{ request()->routeIs(config('route.admin.activity.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="">
+                <a href="{{ route(config('route.admin.activity.home')) }}">
                     Kegiatan Asrama
                 </a>
             </li>
             <li
                 class="{{ request()->routeIs(config('route.admin.facility.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="">
+                <a href="{{ route(config('route.admin.facility.home')) }}">
                     Fasilitas
                 </a>
             </li>

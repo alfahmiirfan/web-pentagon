@@ -30,6 +30,7 @@ return [
             'base' => 'admin.facility.*',
 
             'home' => 'admin.facility.home',
+            'add' => 'admin.facility.add',
         ],
 
     ],
