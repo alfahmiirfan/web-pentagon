@@ -21,7 +21,7 @@
             <input type="search" name="pencarian" id="search" placeholder="Pencarian"
                 class="h-full flex-1 rounded-lg px-2.5">
         </label>
-        <a href=""
+        <a href="{{ route(config('route.admin.event.add')) }}"
             class="ml-auto rounded-lg bg-cstm-blue-900 px-3 py-1.5 text-white">
             <img src="/icons/plus.svg" alt="plus" class="inline-block w-4">
             Tambah

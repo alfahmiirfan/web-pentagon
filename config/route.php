@@ -44,6 +44,7 @@ return [
             'base' => 'admin.event.*',
 
             'home' => 'admin.event.home',
+            'add' => 'admin.event.add',
         ],
 
     ],
