@@ -5,27 +5,9 @@
     </h4>
 
     <div class="flex gap-3">
-        <select name="" id="" class="rounded-lg border px-1">
-            <option value="10">
-                20
-            </option>
-            <option value="10">
-                10
-            </option>
-            <option value="5">
-                5
-            </option>
-        </select>
-        <label for="search" class="flex items-center justify-center overflow-hidden rounded-lg border">
-            <img src="/icons/search.svg" alt="search" class="ml-2.5 w-4">
-            <input type="search" name="pencarian" id="search" placeholder="Pencarian"
-                class="h-full flex-1 rounded-lg px-2.5">
-        </label>
-        <a href="{{ route(config('route.admin.facility.add')) }}"
-            class="ml-auto rounded-lg bg-cstm-blue-900 px-3 py-1.5 text-white">
-            <img src="/icons/plus.svg" alt="plus" class="inline-block w-4">
-            Tambah
-        </a>
+        <x-inputs.select :options="[20, 10, 5]" name="perpage" />
+        <x-inputs.search />
+        <x-links.add href="{{ route(config('route.admin.facility.add')) }}" />
     </div>
 
     <div class="overflow-hidden rounded-lg border">

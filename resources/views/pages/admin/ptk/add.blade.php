@@ -1,55 +1,26 @@
 <x-layouts.admin title="Tambah PTK | Admin | {{ config('app.name') }}">
 
     <div class="mb-6 flex items-center justify-start gap-2.5">
-        <a href="{{ route(config('route.admin.ptk.home')) }}"
-            class="flex items-center justify-center rounded-full border-2 border-cstm-blue-900 p-2">
-            <img src="/icons/v.svg" alt="v" class="w-4 rotate-90">
-        </a>
+        <x-links.back href="{{ route(config('route.admin.ptk.home')) }}" />
         <h4 class="text-xl font-bold text-cstm-blue-900">
             Tambah PTK
         </h4>
     </div>
 
     <form action="" class="flex flex-col gap-3">
-        <div class="flex flex-col gap-1.5">
-            <label for="name">
-                Nama
-            </label>
-            <input type="text" name="name" id="name" placeholder="Nama"
-                class="rounded-lg border-2 px-3 py-1.5">
-        </div>
-        <div class="flex flex-col gap-1.5">
-            <label for="position">
-                Jabatan
-            </label>
-            <input type="text" name="position" id="position" placeholder="Jabatan"
-                class="rounded-lg border-2 px-3 py-1.5">
-        </div>
-        <div class="flex flex-col gap-1.5">
-            <label for="description">
-                Deskripsi
-            </label>
-            <textarea name="description" id="description" placeholder="Deskripsi" class="rounded-lg border-2 px-3 py-1.5"></textarea>
-        </div>
-        <label for="image" class="flex flex-col gap-1.5">
-            <p>
-                Foto PTK
-            </p>
-            <div class="flex h-60 items-center justify-center rounded-lg border-2 border-dashed">
-                <p class="text-lg">
-                    Pilih File
-                </p>
-            </div>
-            <input type="file" name="image" id="image" class="hidden">
-        </label>
+        <x-labels.default text="Nama" for="name">
+            <x-inputs.text name="name" placeholder="Nama" />
+        </x-labels.default>
+        <x-labels.default text="Jabatan" for="position">
+            <x-inputs.text name="position" placeholder="Jabatan" />
+        </x-labels.default>
+        <x-labels.default text="Deskripsi" for="description">
+            <x-inputs.textarea name="description" placeholder="Deskripsi" />
+        </x-labels.default>
+        <x-inputs.image label="Foto PTK" name="image" />
         <div class="flex items-center justify-end gap-3">
-            <a href="{{ route(config('route.admin.ptk.home')) }}"
-                class="w-28 rounded-lg border-2 border-cstm-blue-900 py-1.5 text-center text-cstm-blue-900">
-                Batal
-            </a>
-            <a href="" class="w-28 rounded-lg bg-cstm-blue-900 py-1.5 text-center text-white">
-                Tambah
-            </a>
+            <x-links.cancel href="{{ route(config('route.admin.ptk.home')) }}" />
+            <x-buttons.submit text="Tambah" />
         </div>
     </form>
 

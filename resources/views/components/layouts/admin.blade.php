@@ -23,53 +23,37 @@
             </h3>
         </div>
         <ul class="flex flex-col gap-3">
-            <li
-                class="{{ request()->routeIs(config('route.admin.dashboard.home')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.dashboard.home')) }}">
-                    Dashboard
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.dashboard.home')) }}"
+                    href="{{ route(config('route.admin.dashboard.home')) }}" text="Dashboard" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.activity.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.activity.home')) }}">
-                    Kegiatan Asrama
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.activity.base')) }}"
+                    href="{{ route(config('route.admin.activity.home')) }}" text="Kegiatan Asrama" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.facility.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.facility.home')) }}">
-                    Fasilitas
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.facility.base')) }}"
+                    href="{{ route(config('route.admin.facility.home')) }}" text="Fasilitas" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.information.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.information.home')) }}">
-                    Informasi
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.information.base')) }}"
+                    href="{{ route(config('route.admin.information.home')) }}" text="Informasi" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.event.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.event.home')) }}">
-                    Agenda
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.event.base')) }}"
+                    href="{{ route(config('route.admin.event.home')) }}" text="Agenda" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.ptk.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.ptk.home')) }}">
-                    PTK
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.ptk.base')) }}"
+                    href="{{ route(config('route.admin.ptk.home')) }}" text="PTK" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.achievement.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.achievement.home')) }}">
-                    Prestasi
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.achievement.base')) }}"
+                    href="{{ route(config('route.admin.achievement.home')) }}" text="Prestasi" />
             </li>
-            <li
-                class="{{ request()->routeIs(config('route.admin.alumni.base')) ? 'bg-cstm-blue-900 text-white hover:text-gray-300' : 'hover:*:text-cstm-blue-900' }} flex items-center justify-center rounded-lg *:flex-1 *:px-3 *:py-1.5">
-                <a href="{{ route(config('route.admin.alumni.home')) }}">
-                    Alumni
-                </a>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.alumni.base')) }}"
+                    href="{{ route(config('route.admin.alumni.home')) }}" text="Alumni" />
             </li>
         </ul>
     </aside>
