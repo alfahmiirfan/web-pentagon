@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,11 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('informasi')->group(function (): void {
         Route::get('/', [HomeInformationAdminController::class, 'view'])->name(config('route.admin.information.home'));
         Route::get('/tambah', [AddInformationAdminController::class, 'view'])->name(config('route.admin.information.add'));
+    });
+
+    // Event
+    Route::prefix('agenda')->group(function (): void {
+        Route::get('/', [HomeEventAdminController::class, 'view'])->name(config('route.admin.event.home'));
     });
 
 });

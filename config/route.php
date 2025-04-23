@@ -40,6 +40,12 @@ return [
             'add' => 'admin.information.add',
         ],
 
+        'event' => [
+            'base' => 'admin.event.*',
+
+            'home' => 'admin.event.home',
+        ],
+
     ],
 
 ];
