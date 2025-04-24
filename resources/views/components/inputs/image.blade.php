@@ -1,6 +1,6 @@
-@props(['placeholder', 'label', 'name', 'id'])
+@props(['placeholder' => 'Pilih File', 'label' => '', 'name' => '', 'id'])
 
-<label for="{{ $id ?? ($name ?? '') }}" class="flex flex-col gap-1.5" x-data="{
+<label for="{{ $id ?? $name }}" class="flex flex-col gap-1.5" x-data="{
     previewImage: null,
     pushPreview(event) {
         const file = event.target.files[0];
@@ -12,21 +12,21 @@
     }
 }">
     <p>
-        {{ $label ?? '' }}
+        {{ $label }}
     </p>
     <div @class([
         'flex h-60 items-center justify-center rounded-lg border-2 border-dashed p-3' => true,
-        'border-red-500' => $errors->has($name ?? ''),
+        'border-red-500' => $errors->has($name),
     ])>
         <p x-show="!previewImage" class="text-lg">
-            {{ $placeholder ?? 'Pilih File' }}
+            {{ $placeholder }}
         </p>
         <img id="imagePreview" x-show="previewImage" x-bind:src="previewImage" class="max-h-full max-w-full">
     </div>
-    <input type="file" name="{{ $name ?? '' }}" id="{{ $id ?? ($name ?? '') }}" accept="image/*" class="hidden"
+    <input type="file" name="{{ $name }}" id="{{ $id ?? $name }}" accept="image/*" class="hidden"
         x-on:change="pushPreview($event)">
 
-    @error($name ?? '')
+    @error($name)
         <p class="italic text-red-500">
             {{ $message }}
         </p>

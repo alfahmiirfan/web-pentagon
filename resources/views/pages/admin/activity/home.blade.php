@@ -1,19 +1,51 @@
-<x-layouts.admin title="Kegiatan | Admin | {{ config('app.name') }}">
+<x-layouts.admin title="Kegiatan | Admin | {{ config('app.name') }}" x-data="{
+    data: {{ json_encode($data->toArray()) }},
+    perpageData: [20, 15, 10, 5],
+    currentPage: 1,
+    perpage: 20,
+    maxPage: 1,
+    search: '',
+    get filteredData() {
+        return this.data.filter(item =>
+            (this.search === '' || item.name.toLowerCase().includes(this.search.toLowerCase()))
+        );
+    },
+    get paginatedData() {
+        const start = (this.currentPage - 1) * this.perpage;
+        const end = start + this.perpage;
+
+        const filteredData = this.filteredData;
+
+        this.maxPage = parseInt(filteredData.length / this.perpage) + (filteredData.length % this.perpage === 0 ? 0 : 1);
+
+        if (this.currentPage <= 1) {
+            this.currentPage = 1;
+        } else if (this.currentPage > this.maxPage) {
+            this.currentPage = this.maxPage;
+        }
+
+        return filteredData.slice(start, end);
+    },
+}">
 
     <h4 class="mb-6 text-xl font-bold text-cstm-blue-900">
         Kegiatan Asrama
     </h4>
 
     <div class="flex gap-3">
-        <x-inputs.select :options="[20, 10, 5]" name="perpage" />
-        <x-inputs.search />
+        <x-inputs.select x-model.number.debounce.500ms="perpage">
+            <template x-for="item in perpageData">
+                <option x-value="item" x-text="item"></option>
+            </template>
+        </x-inputs.select>
+        <x-inputs.search x-model.debounce.500ms="search" />
         <x-links.add href="{{ route(config('route.admin.activity.add')) }}" />
     </div>
 
-    <div class="overflow-hidden rounded-lg border">
+    <div class="rounded-lg border">
         <table class="w-full">
             <thead>
-                <tr class="text-white *:bg-cstm-green-900 *:p-1.5">
+                <tr class="text-white *:bg-cstm-green-900 *:p-1.5 first:*:rounded-tl-lg last:*:rounded-tr-lg">
                     <th>No</th>
                     <th>Nama Kegiatan</th>
                     <th>Gambar</th>
@@ -21,18 +53,46 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="border-b *:p-1.5 last:border-none">
-                    <td class="text-center">1</td>
-                    <td>Ibadah Bersama</td>
-                    <td>
-                        <div class="mx-auto aspect-video w-52 bg-blue-300"></div>
-                    </td>
-                    <td class="text-center">
-                        <img src="/icons/more.svg" alt="more" class="inline-block w-1">
-                    </td>
-                </tr>
+
+                <template x-for="(item, index) in paginatedData">
+                    <tr class="border-b *:p-1.5 last:border-none">
+                        <td class="text-center" x-text="(currentPage - 1) * perpage + (index + 1)"></td>
+                        <td x-text="item.name"></td>
+                        <td>
+                            <img x-bind:src="`/storage/${item.image}`" alt=""
+                                class="mx-auto max-h-40 w-full max-w-52">
+                        </td>
+                        <td>
+                            <div class="flex">
+                                <div class="relative m-auto" x-data="{
+                                    inFocus: false,
+                                }">
+                                    <button class="m-auto px-3 py-1.5" x-on:click="inFocus = !inFocus">
+                                        <img src="/icons/more.svg" alt="more" class="inline-block w-1">
+                                    </button>
+                                    <div x-show="inFocus"
+                                        class="absolute right-0 flex w-max flex-col gap-1 rounded-lg bg-white p-3 shadow"
+                                        x-on:blur="inFocus = false">
+                                        <p class="border-b text-cstm-blue-900">
+                                            Pilih Aksi
+                                        </p>
+                                        <a href="">
+                                            Edit
+                                        </a>
+                                        <button class="text-left">
+                                            Hapus
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+
             </tbody>
         </table>
     </div>
+
+    <x-paginations.default />
 
 </x-layouts.admin>

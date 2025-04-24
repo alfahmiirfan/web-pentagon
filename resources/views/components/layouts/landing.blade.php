@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title' => config('app.name')])
 
 <x-layouts.app :$title>
 

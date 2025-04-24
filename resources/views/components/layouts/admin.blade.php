@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title' => 'Admin | ' . config('app.name')])
 
 <x-layouts.app :$title>
 
@@ -59,7 +59,7 @@
     </aside>
 
     <main class="flex min-h-screen w-full items-start justify-start overflow-y-auto overflow-x-hidden bg-gray-100 p-5">
-        <div class="ml-60 mt-20 flex flex-1 flex-col gap-3 rounded-xl bg-white p-5">
+        <div class="ml-60 mt-20 flex flex-1 flex-col gap-3 rounded-xl bg-white p-5" {!! $attributes !!}>
 
             {{ $slot }}
 
