@@ -87,7 +87,7 @@
                                             Pilih Aksi
                                         </p>
                                         <a
-                                            x-bind:href="``
+                                            x-bind:href="`{{ route(config('route.admin.facility.edit'), ['facility' => '###']) }}`
                                             .replace('###', item.id)">
                                             Edit
                                         </a>

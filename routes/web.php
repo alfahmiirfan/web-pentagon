@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\DeleteActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\EditActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
+use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
@@ -47,6 +48,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/', [HomeFacilityAdminController::class, 'view'])->name(config('route.admin.facility.home'));
         Route::get('/tambah', [AddFacilityAdminController::class, 'view'])->name(config('route.admin.facility.add'));
         Route::post('/tambah', [AddFacilityAdminController::class, 'action'])->name(config('route.admin.facility.add-action'));
+        Route::get('/{facility}/ubah', [EditFacilityAdminController::class, 'view'])->name(config('route.admin.facility.edit'));
     });
 
     // Information
