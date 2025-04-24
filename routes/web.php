@@ -46,6 +46,7 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('fasilitas')->group(function (): void {
         Route::get('/', [HomeFacilityAdminController::class, 'view'])->name(config('route.admin.facility.home'));
         Route::get('/tambah', [AddFacilityAdminController::class, 'view'])->name(config('route.admin.facility.add'));
+        Route::post('/tambah', [AddFacilityAdminController::class, 'action'])->name(config('route.admin.facility.add-action'));
     });
 
     // Information
