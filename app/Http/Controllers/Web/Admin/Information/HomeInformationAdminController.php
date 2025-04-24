@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin\Information;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use App\Models\Information;
 
 class HomeInformationAdminController extends Controller
 {
@@ -12,6 +13,10 @@ class HomeInformationAdminController extends Controller
      */
     public function view(): View
     {
-        return view('pages.admin.information.home');
+        $data = Information::orderByDesc('date')->latest()->get();
+
+        return view('pages.admin.information.home', compact([
+            'data'
+        ]));
     }
 }

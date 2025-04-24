@@ -40,20 +40,4 @@ class Information extends Model
 
     public const IMAGE_DIR = '/images/informations';
     public const IMAGE_MAX_SIZE = '5000';
-
-    /*
-    | -----------------------------------------------------------------
-    | Protected Functions
-    | -----------------------------------------------------------------
-    */
-
-    /**
-     * @return array
-     */
-    protected function casts(): array
-    {
-        return [
-            'date' => 'date',
-        ];
-    }
 }
