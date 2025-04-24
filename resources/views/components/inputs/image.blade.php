@@ -27,7 +27,8 @@
         x-on:change="pushPreview($event)">
 
     @error($name)
-        <p class="italic text-red-500">
+        <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
+            <img src="/icons/info.svg" alt="" class="w-4">
             {{ $message }}
         </p>
     @enderror

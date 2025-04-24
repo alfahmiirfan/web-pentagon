@@ -5,6 +5,8 @@
     perpage: 20,
     maxPage: 1,
     search: '',
+    deleteModal: false,
+    selectedID: null,
     get filteredData() {
         return this.data.filter(item =>
             (this.search === '' || item.name.toLowerCase().includes(this.search.toLowerCase()))
@@ -42,6 +44,13 @@
         <x-links.add href="{{ route(config('route.admin.activity.add')) }}" />
     </div>
 
+    @error('error')
+        <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
+            <img src="/icons/info.svg" alt="" class="w-4">
+            {{ $message }}
+        </p>
+    @enderror
+
     <div class="rounded-lg border">
         <table class="w-full">
             <thead>
@@ -73,7 +82,7 @@
                                         <img src="/icons/more.svg" alt="more" class="inline-block w-1">
                                     </button>
                                     <div x-show="inFocus"
-                                        class="absolute right-0 flex w-max flex-col gap-1 rounded-lg bg-white p-3 shadow">
+                                        class="absolute right-0 z-20 flex w-max flex-col gap-1 rounded-lg bg-white p-3 shadow">
                                         <p class="border-b text-cstm-blue-900">
                                             Pilih Aksi
                                         </p>
@@ -82,7 +91,8 @@
                                             .replace('###', item.id)">
                                             Edit
                                         </a>
-                                        <button class="text-left">
+                                        <button x-on:click="selectedID = item.id; deleteModal = true; inFocus = false"
+                                            class="text-left">
                                             Hapus
                                         </button>
                                     </div>
@@ -105,5 +115,8 @@
     </div>
 
     <x-paginations.default />
+    <x-modals.delete
+        x-bind:href="selectedID ? `{{ route(config('route.admin.activity.delete-action'), ['activity' => '###']) }}`.replace('###',
+            selectedID) : ''" />
 
 </x-layouts.admin>

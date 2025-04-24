@@ -27,6 +27,7 @@ return [
             'add-action' => 'admin.activity.add.action',
             'edit' => 'admin.activity.edit',
             'edit-action' => 'admin.activity.edit.action',
+            'delete-action' => 'admin.activity.delete.action',
         ],
 
         'facility' => [
