@@ -37,6 +37,7 @@ return [
             'add' => 'admin.facility.add',
             'add-action' => 'admin.facility.add.action',
             'edit' => 'admin.facility.edit',
+            'edit-action' => 'admin.facility.edit.action',
         ],
 
         'information' => [
