@@ -24,6 +24,7 @@ return [
 
             'home' => 'admin.activity.home',
             'add' => 'admin.activity.add',
+            'add.action' => 'admin.activity.add.action',
         ],
 
         'facility' => [

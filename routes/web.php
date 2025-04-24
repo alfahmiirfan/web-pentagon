@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('kegiatan')->group(function (): void {
         Route::get('/', [HomeActivityAdminController::class, 'view'])->name(config('route.admin.activity.home'));
         Route::get('/tambah', [AddActivityAdminController::class, 'view'])->name(config('route.admin.activity.add'));
+        Route::post('/tambah', [AddActivityAdminController::class, 'action'])->name(config('route.admin.activity.add.action'));
     });
 
     // Facility

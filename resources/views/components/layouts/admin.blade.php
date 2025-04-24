@@ -66,4 +66,11 @@
         </div>
     </main>
 
+    @session('success')
+        <p
+            class="absolute bottom-5 right-5 z-40 rounded-lg border-2 border-green-500 bg-green-300 px-5 py-1.5 text-green-700">
+            {{ $value }}
+        </p>
+    @endsession
+
 </x-layouts.app>

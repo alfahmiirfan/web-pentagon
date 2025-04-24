@@ -1,8 +1,9 @@
-@props(['placeholder', 'name', 'id'])
+@props(['placeholder', 'value', 'name', 'id'])
 
 <div class="flex flex-col">
     <input type="text" name="{{ $name ?? '' }}" id="{{ $id ?? ($name ?? '') }}"
-        placeholder="{{ $placeholder ?? 'Masukkan input' }}" @class([
+        placeholder="{{ $placeholder ?? 'Masukkan input' }}" value="{{ $value ?? old($name ?? '', '') }}"
+        @class([
             'rounded-lg border-2 px-3 py-1.5' => true,
             'border-red-500' => $errors->has($name ?? ''),
         ])>

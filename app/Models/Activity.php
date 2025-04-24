@@ -34,4 +34,7 @@ class Activity extends Model
         'image' => 65535,
         'name' => 255,
     ];
+
+    public const IMAGE_DIR = '/images/activities';
+    public const IMAGE_MAX_SIZE = '5000';
 }
