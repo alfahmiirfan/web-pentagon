@@ -58,6 +58,7 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('informasi')->group(function (): void {
         Route::get('/', [HomeInformationAdminController::class, 'view'])->name(config('route.admin.information.home'));
         Route::get('/tambah', [AddInformationAdminController::class, 'view'])->name(config('route.admin.information.add'));
+        Route::post('/tambah', [AddInformationAdminController::class, 'action'])->name(config('route.admin.information.add-action'));
     });
 
     // Event

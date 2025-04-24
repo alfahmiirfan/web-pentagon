@@ -38,6 +38,9 @@ class Information extends Model
         'name' => 255,
     ];
 
+    public const IMAGE_DIR = '/images/informations';
+    public const IMAGE_MAX_SIZE = '5000';
+
     /*
     | -----------------------------------------------------------------
     | Protected Functions
