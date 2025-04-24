@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\Admin\Achievement\AddAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\AddInformationAdminController;
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
 use App\Http\Controllers\Web\Admin\Activity\DeleteActivityAdminController;
+use App\Http\Controllers\Web\Admin\Facility\DeleteFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\EditActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
@@ -50,6 +51,7 @@ Route::prefix('admin')->group(function (): void {
         Route::post('/tambah', [AddFacilityAdminController::class, 'action'])->name(config('route.admin.facility.add-action'));
         Route::get('/{facility}/ubah', [EditFacilityAdminController::class, 'view'])->name(config('route.admin.facility.edit'));
         Route::put('/{facility}/ubah', [EditFacilityAdminController::class, 'action'])->name(config('route.admin.facility.edit-action'));
+        Route::any('/{facility}/hapus', [DeleteFacilityAdminController::class, 'action'])->name(config('route.admin.facility.delete-action'));
     });
 
     // Information
