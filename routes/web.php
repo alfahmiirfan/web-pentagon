@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\Admin\Information\HomeInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\AddAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\AddInformationAdminController;
 use App\Http\Controllers\Web\Admin\Dashboard\HomeDashboardAdminController;
+use App\Http\Controllers\Web\Admin\Activity\EditActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
@@ -34,7 +35,8 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('kegiatan')->group(function (): void {
         Route::get('/', [HomeActivityAdminController::class, 'view'])->name(config('route.admin.activity.home'));
         Route::get('/tambah', [AddActivityAdminController::class, 'view'])->name(config('route.admin.activity.add'));
-        Route::post('/tambah', [AddActivityAdminController::class, 'action'])->name(config('route.admin.activity.add.action'));
+        Route::post('/tambah', [AddActivityAdminController::class, 'action'])->name(config('route.admin.activity.add-action'));
+        Route::get('/{activity}/ubah', [EditActivityAdminController::class, 'view'])->name(config('route.admin.activity.edit'));
     });
 
     // Facility

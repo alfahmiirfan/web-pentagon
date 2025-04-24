@@ -1,5 +1,5 @@
 <x-layouts.admin title="Kegiatan | Admin | {{ config('app.name') }}" x-data="{
-    data: {{ json_encode($data->toArray()) }},
+    data: {{ json_encode($data) }},
     perpageData: [20, 15, 10, 5],
     currentPage: 1,
     perpage: 20,
@@ -71,12 +71,13 @@
                                         <img src="/icons/more.svg" alt="more" class="inline-block w-1">
                                     </button>
                                     <div x-show="inFocus"
-                                        class="absolute right-0 flex w-max flex-col gap-1 rounded-lg bg-white p-3 shadow"
-                                        x-on:blur="inFocus = false">
+                                        class="absolute right-0 flex w-max flex-col gap-1 rounded-lg bg-white p-3 shadow">
                                         <p class="border-b text-cstm-blue-900">
                                             Pilih Aksi
                                         </p>
-                                        <a href="">
+                                        <a
+                                            x-bind:href="`{{ route(config('route.admin.activity.edit'), ['activity' => '###']) }}`
+                                            .replace('###', item.id)">
                                             Edit
                                         </a>
                                         <button class="text-left">
@@ -91,6 +92,14 @@
 
             </tbody>
         </table>
+
+        <template x-if="data.length === 0">
+            <p class="my-3 text-center">Tidak ada data</p>
+        </template>
+        <template x-if="data.length !== 0 && paginatedData.length === 0 && search !== ''">
+            <p class="my-3 text-center">Data tidak dapat ditemukan</p>
+        </template>
+
     </div>
 
     <x-paginations.default />
