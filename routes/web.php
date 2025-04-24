@@ -37,6 +37,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddActivityAdminController::class, 'view'])->name(config('route.admin.activity.add'));
         Route::post('/tambah', [AddActivityAdminController::class, 'action'])->name(config('route.admin.activity.add-action'));
         Route::get('/{activity}/ubah', [EditActivityAdminController::class, 'view'])->name(config('route.admin.activity.edit'));
+        Route::put('/{activity}/ubah', [EditActivityAdminController::class, 'action'])->name(config('route.admin.activity.edit-action'));
     });
 
     // Facility

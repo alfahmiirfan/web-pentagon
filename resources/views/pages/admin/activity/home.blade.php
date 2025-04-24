@@ -59,8 +59,10 @@
                         <td class="text-center" x-text="(currentPage - 1) * perpage + (index + 1)"></td>
                         <td x-text="item.name"></td>
                         <td>
-                            <img x-bind:src="`/storage/${item.image}`" alt=""
-                                class="mx-auto max-h-40 w-full max-w-52">
+                            <div class="flex items-center justify-center">
+                                <img x-bind:src="`/storage/${item.image}`" alt=""
+                                    class="mx-auto aspect-auto h-full max-h-40 max-w-52">
+                            </div>
                         </td>
                         <td>
                             <div class="flex">

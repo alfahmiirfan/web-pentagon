@@ -49,7 +49,7 @@ class AddActivityAdminController extends Controller
 
             return redirect()
                 ->route(config('route.admin.activity.home'))
-                ->with('success', 'berhasil menambahkan kegiatan');
+                ->with('success', 'Berhasil menambahkan kegiatan');
         } catch (\Throwable $th) {
             DB::rollBack();
 

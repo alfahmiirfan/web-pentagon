@@ -7,7 +7,9 @@
         </h4>
     </div>
 
-    <form action="" method="POST" enctype="multipart/form-data" class="flex flex-col gap-3">
+    <form action="{{ route(config('route.admin.activity.edit-action'), ['activity' => $activity]) }}" method="POST"
+        enctype="multipart/form-data" class="flex flex-col gap-3">
+        @method('PUT')
         @csrf
 
         <x-labels.default text="Nama Kegiatan" for="name">
