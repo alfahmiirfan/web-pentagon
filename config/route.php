@@ -82,6 +82,7 @@ return [
             'add-action' => 'admin.achievement.add.action',
             'edit' => 'admin.achievement.edit',
             'edit-action' => 'admin.achievement.edit.action',
+            'delete-action' => 'admin.achievement.delete.action',
         ],
 
         'alumni' => [

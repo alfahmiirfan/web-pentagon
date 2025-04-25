@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Achievement\DeleteAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\EditAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
@@ -98,6 +99,7 @@ Route::prefix('admin')->group(function (): void {
         Route::post('/tambah', [AddAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.add-action'));
         Route::get('/{achievement}/ubah', [EditAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.edit'));
         Route::put('/{achievement}/ubah', [EditAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.edit-action'));
+        Route::any('/{achievement}/hapus', [DeleteAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.delete-action'));
     });
 
     // Alumni
