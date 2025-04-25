@@ -38,4 +38,7 @@ class PTK extends Model
         'image' => 65535,
         'name' => 255,
     ];
+
+    public const IMAGE_DIR = '/images/ptk';
+    public const IMAGE_MAX_SIZE = '5000';
 }

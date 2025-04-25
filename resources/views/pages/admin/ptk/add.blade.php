@@ -7,7 +7,10 @@
         </h4>
     </div>
 
-    <form action="" class="flex flex-col gap-3">
+    <form action="{{ route(config('route.admin.ptk.add-action')) }}" method="POST" enctype="multipart/form-data"
+        class="flex flex-col gap-3">
+        @csrf
+
         <x-labels.default text="Nama" for="name">
             <x-inputs.text name="name" placeholder="Nama" />
         </x-labels.default>
@@ -18,6 +21,14 @@
             <x-inputs.textarea name="description" placeholder="Deskripsi" />
         </x-labels.default>
         <x-inputs.image label="Foto PTK" name="image" />
+
+        @error('error')
+            <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
+                <img src="/icons/info.svg" alt="" class="w-4">
+                {{ $message }}
+            </p>
+        @enderror
+
         <div class="flex items-center justify-end gap-3">
             <x-links.cancel href="{{ route(config('route.admin.ptk.home')) }}" />
             <x-buttons.submit text="Tambah" />
