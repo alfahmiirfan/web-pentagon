@@ -17,6 +17,7 @@ use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Alumni\DeleteAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
@@ -110,6 +111,7 @@ Route::prefix('admin')->group(function (): void {
         Route::post('/tambah', [AddAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.add-action'));
         Route::get('/{alumni}/ubah', [EditAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.edit'));
         Route::put('/{alumni}/ubah', [EditAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.edit-action'));
+        Route::any('/{alumni}/hapus', [DeleteAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.delete-action'));
     });
 
 });

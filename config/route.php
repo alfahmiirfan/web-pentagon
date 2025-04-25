@@ -93,6 +93,7 @@ return [
             'add-action' => 'admin.alumni.add.action',
             'edit' => 'admin.alumni.edit',
             'edit-action' => 'admin.alumni.edit.action',
+            'delete-action' => 'admin.alumni.delete.action',
         ],
 
     ],
