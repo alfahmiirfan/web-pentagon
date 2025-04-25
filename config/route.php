@@ -49,6 +49,7 @@ return [
             'add-action' => 'admin.information.add.action',
             'edit' => 'admin.information.edit',
             'edit-action' => 'admin.information.edit.action',
+            'delete-action' => 'admin.information.delete.action',
         ],
 
         'event' => [
