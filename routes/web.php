@@ -61,6 +61,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddInformationAdminController::class, 'view'])->name(config('route.admin.information.add'));
         Route::post('/tambah', [AddInformationAdminController::class, 'action'])->name(config('route.admin.information.add-action'));
         Route::get('/{information}/ubah', [EditInformationAdminController::class, 'view'])->name(config('route.admin.information.edit'));
+        Route::put('/{information}/ubah', [EditInformationAdminController::class, 'action'])->name(config('route.admin.information.edit-action'));
     });
 
     // Event

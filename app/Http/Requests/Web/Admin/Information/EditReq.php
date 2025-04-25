@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Traits\ErrorMessageValidation;
 use App\Models\Information;
 
-class AddReq extends FormRequest
+class EditReq extends FormRequest
 {
     use ErrorMessageValidation;
 
@@ -27,7 +27,7 @@ class AddReq extends FormRequest
     {
         return [
             'description' => ['bail', 'required', 'string', 'max:' . Information::MAX['description']],
-            'image' => ['bail', 'required', 'file', 'image', 'max:' . Information::IMAGE_MAX_SIZE],
+            'image' => ['bail', 'nullable', 'file', 'image', 'max:' . Information::IMAGE_MAX_SIZE],
             'name' => ['bail', 'required', 'string', 'max:' . Information::MAX['name']],
             'date' => ['bail', 'required', 'date'],
         ];
