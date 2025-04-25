@@ -73,6 +73,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddEventAdminController::class, 'view'])->name(config('route.admin.event.add'));
         Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
         Route::get('/{event}/ubah', [EditEventAdminController::class, 'view'])->name(config('route.admin.event.edit'));
+        Route::put('/{event}/ubah', [EditEventAdminController::class, 'action'])->name(config('route.admin.event.edit-action'));
     });
 
     // PTK
