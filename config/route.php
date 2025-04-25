@@ -80,6 +80,7 @@ return [
             'home' => 'admin.achievement.home',
             'add' => 'admin.achievement.add',
             'add-action' => 'admin.achievement.add.action',
+            'edit' => 'admin.achievement.edit',
         ],
 
         'alumni' => [
