@@ -85,6 +85,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddPTKAdminController::class, 'view'])->name(config('route.admin.ptk.add'));
         Route::post('/tambah', [AddPTKAdminController::class, 'action'])->name(config('route.admin.ptk.add-action'));
         Route::get('/{ptk}/ubah', [EditPTKAdminController::class, 'view'])->name(config('route.admin.ptk.edit'));
+        Route::put('/{ptk}/ubah', [EditPTKAdminController::class, 'action'])->name(config('route.admin.ptk.edit-action'));
     });
 
     // Achievement

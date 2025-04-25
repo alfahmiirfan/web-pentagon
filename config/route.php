@@ -70,6 +70,7 @@ return [
             'add' => 'admin.ptk.add',
             'add-action' => 'admin.ptk.add.action',
             'edit' => 'admin.ptk.edit',
+            'edit-action' => 'admin.ptk.edit.action',
         ],
 
         'achievement' => [

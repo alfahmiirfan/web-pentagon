@@ -7,7 +7,8 @@
         </h4>
     </div>
 
-    <form action="" method="POST" enctype="multipart/form-data" class="flex flex-col gap-3">
+    <form action="{{ route(config('route.admin.ptk.edit-action'), ['ptk' => $ptk]) }}" method="POST"
+        enctype="multipart/form-data" class="flex flex-col gap-3">
         @method('PUT')
         @csrf
 
