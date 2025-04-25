@@ -38,19 +38,6 @@ class Achievement extends Model
         'name' => 255,
     ];
 
-    /*
-    | -----------------------------------------------------------------
-    | Protected Functions
-    | -----------------------------------------------------------------
-    */
-
-    /**
-     * @return array
-     */
-    protected function casts(): array
-    {
-        return [
-            'date' => 'date',
-        ];
-    }
+    public const IMAGE_DIR = '/images/achievements';
+    public const IMAGE_MAX_SIZE = '5000';
 }

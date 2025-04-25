@@ -94,6 +94,7 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('prestasi')->group(function (): void {
         Route::get('/', [HomeAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.home'));
         Route::get('/tambah', [AddAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.add'));
+        Route::post('/tambah', [AddAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.add-action'));
     });
 
     // Alumni
