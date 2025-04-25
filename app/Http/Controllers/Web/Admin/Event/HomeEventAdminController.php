@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin\Event;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use App\Models\Event;
 
 class HomeEventAdminController extends Controller
 {
@@ -12,6 +13,10 @@ class HomeEventAdminController extends Controller
      */
     public function view(): View
     {
-        return view('pages.admin.event.home');
+        $data = Event::orderByDesc('date')->latest()->get();
+
+        return view('pages.admin.event.home', compact([
+            'data'
+        ]));
     }
 }
