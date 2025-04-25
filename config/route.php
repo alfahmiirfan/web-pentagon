@@ -60,6 +60,7 @@ return [
             'add-action' => 'admin.event.add.action',
             'edit' => 'admin.event.edit',
             'edit-action' => 'admin.event.edit.action',
+            'delete-action' => 'admin.event.delete.action',
         ],
 
         'ptk' => [

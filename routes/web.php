@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\EditInformationAdminController;
@@ -17,7 +16,9 @@ use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
+use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
+use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
@@ -74,6 +75,7 @@ Route::prefix('admin')->group(function (): void {
         Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
         Route::get('/{event}/ubah', [EditEventAdminController::class, 'view'])->name(config('route.admin.event.edit'));
         Route::put('/{event}/ubah', [EditEventAdminController::class, 'action'])->name(config('route.admin.event.edit-action'));
+        Route::any('/{event}/hapus', [DeleteEventAdminController::class, 'action'])->name(config('route.admin.event.delete-action'));
     });
 
     // PTK
