@@ -50,4 +50,7 @@ class Alumni extends Model
         'name' => 255,
         'year' => 4,
     ];
+
+    public const IMAGE_DIR = '/images/alumnis';
+    public const IMAGE_MAX_SIZE = '5000';
 }

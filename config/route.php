@@ -90,6 +90,7 @@ return [
 
             'home' => 'admin.alumni.home',
             'add' => 'admin.alumni.add',
+            'add-action' => 'admin.alumni.add.action',
         ],
 
     ],
