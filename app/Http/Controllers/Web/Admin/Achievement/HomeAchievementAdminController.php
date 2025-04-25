@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin\Achievement;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use App\Models\Achievement;
 
 class HomeAchievementAdminController extends Controller
 {
@@ -12,6 +13,10 @@ class HomeAchievementAdminController extends Controller
      */
     public function view(): View
     {
-        return view('pages.admin.achievement.home');
+        $data = Achievement::orderByDesc('date')->latest()->get();
+
+        return view('pages.admin.achievement.home', compact([
+            'data'
+        ]));
     }
 }
