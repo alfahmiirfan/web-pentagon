@@ -58,6 +58,7 @@ return [
             'home' => 'admin.event.home',
             'add' => 'admin.event.add',
             'add-action' => 'admin.event.add.action',
+            'edit' => 'admin.event.edit',
         ],
 
         'ptk' => [

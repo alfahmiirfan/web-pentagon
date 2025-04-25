@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\EditInformationAdminController;
@@ -71,6 +72,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/', [HomeEventAdminController::class, 'view'])->name(config('route.admin.event.home'));
         Route::get('/tambah', [AddEventAdminController::class, 'view'])->name(config('route.admin.event.add'));
         Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
+        Route::get('/{event}/ubah', [EditEventAdminController::class, 'view'])->name(config('route.admin.event.edit'));
     });
 
     // PTK
