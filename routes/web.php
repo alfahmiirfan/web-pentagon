@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
+use App\Http\Controllers\Web\Admin\Information\EditInformationAdminController;
 use App\Http\Controllers\Web\Admin\Information\HomeInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\AddAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\AddInformationAdminController;
@@ -59,6 +60,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/', [HomeInformationAdminController::class, 'view'])->name(config('route.admin.information.home'));
         Route::get('/tambah', [AddInformationAdminController::class, 'view'])->name(config('route.admin.information.add'));
         Route::post('/tambah', [AddInformationAdminController::class, 'action'])->name(config('route.admin.information.add-action'));
+        Route::get('/{information}/ubah', [EditInformationAdminController::class, 'view'])->name(config('route.admin.information.edit'));
     });
 
     // Event

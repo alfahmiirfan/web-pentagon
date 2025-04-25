@@ -47,6 +47,7 @@ return [
             'home' => 'admin.information.home',
             'add' => 'admin.information.add',
             'add-action' => 'admin.information.add.action',
+            'edit' => 'admin.information.edit',
         ],
 
         'event' => [
