@@ -109,6 +109,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.add'));
         Route::post('/tambah', [AddAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.add-action'));
         Route::get('/{alumni}/ubah', [EditAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.edit'));
+        Route::put('/{alumni}/ubah', [EditAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.edit-action'));
     });
 
 });
