@@ -10,7 +10,6 @@
     get filteredData() {
         return this.data.filter(item => (
             this.search === '' ||
-            item.description.toLowerCase().includes(this.search.toLowerCase()) ||
             new Date(item.date).toDateString().toLowerCase().includes(this.search.toLowerCase()) ||
             item.name.toLowerCase().includes(this.search.toLowerCase())
         ));
