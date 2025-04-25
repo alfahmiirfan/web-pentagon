@@ -17,6 +17,7 @@ use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
@@ -107,6 +108,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/', [HomeAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.home'));
         Route::get('/tambah', [AddAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.add'));
         Route::post('/tambah', [AddAlumniAdminController::class, 'action'])->name(config('route.admin.alumni.add-action'));
+        Route::get('/{alumni}/ubah', [EditAlumniAdminController::class, 'view'])->name(config('route.admin.alumni.edit'));
     });
 
 });

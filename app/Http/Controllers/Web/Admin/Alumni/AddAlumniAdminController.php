@@ -58,6 +58,7 @@ class AddAlumniAdminController extends Controller
                 'phone' => $phoneReq,
                 'name' => $nameReq,
                 'year' => $yearReq,
+                'image' => $image,
             ]);
 
             DB::commit();
