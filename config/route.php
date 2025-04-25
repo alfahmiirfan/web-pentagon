@@ -69,6 +69,7 @@ return [
             'home' => 'admin.ptk.home',
             'add' => 'admin.ptk.add',
             'add-action' => 'admin.ptk.add.action',
+            'edit' => 'admin.ptk.edit',
         ],
 
         'achievement' => [

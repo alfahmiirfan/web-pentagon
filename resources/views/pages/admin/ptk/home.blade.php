@@ -90,7 +90,9 @@
                                         <p class="border-b text-cstm-blue-900">
                                             Pilih Aksi
                                         </p>
-                                        <a x-bind:href="``.replace('###', item.id)">
+                                        <a
+                                            x-bind:href="`{{ route(config('route.admin.ptk.edit'), ['ptk' => '###']) }}`.replace(
+                                                '###', item.id)">
                                             Edit
                                         </a>
                                         <button x-on:click="selectedID = item.id; deleteModal = true; inFocus = false"
