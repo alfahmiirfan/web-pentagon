@@ -21,6 +21,7 @@ use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
+use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
@@ -86,6 +87,7 @@ Route::prefix('admin')->group(function (): void {
         Route::post('/tambah', [AddPTKAdminController::class, 'action'])->name(config('route.admin.ptk.add-action'));
         Route::get('/{ptk}/ubah', [EditPTKAdminController::class, 'view'])->name(config('route.admin.ptk.edit'));
         Route::put('/{ptk}/ubah', [EditPTKAdminController::class, 'action'])->name(config('route.admin.ptk.edit-action'));
+        Route::any('/{ptk}/hapus', [DeletePTKAdminController::class, 'action'])->name(config('route.admin.ptk.delete-action'));
     });
 
     // Achievement

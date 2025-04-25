@@ -71,6 +71,7 @@ return [
             'add-action' => 'admin.ptk.add.action',
             'edit' => 'admin.ptk.edit',
             'edit-action' => 'admin.ptk.edit.action',
+            'delete-action' => 'admin.ptk.delete.action',
         ],
 
         'achievement' => [
