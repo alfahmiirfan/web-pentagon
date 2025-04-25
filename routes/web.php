@@ -97,6 +97,7 @@ Route::prefix('admin')->group(function (): void {
         Route::get('/tambah', [AddAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.add'));
         Route::post('/tambah', [AddAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.add-action'));
         Route::get('/{achievement}/ubah', [EditAchievementAdminController::class, 'view'])->name(config('route.admin.achievement.edit'));
+        Route::put('/{achievement}/ubah', [EditAchievementAdminController::class, 'action'])->name(config('route.admin.achievement.edit-action'));
     });
 
     // Alumni
