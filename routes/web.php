@@ -70,6 +70,7 @@ Route::prefix('admin')->group(function (): void {
     Route::prefix('agenda')->group(function (): void {
         Route::get('/', [HomeEventAdminController::class, 'view'])->name(config('route.admin.event.home'));
         Route::get('/tambah', [AddEventAdminController::class, 'view'])->name(config('route.admin.event.add'));
+        Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
     });
 
     // PTK
