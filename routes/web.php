@@ -28,12 +28,14 @@ use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
+use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.landing.home'));
+Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 
 // ADMIN

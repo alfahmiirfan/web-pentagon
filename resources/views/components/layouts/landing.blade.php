@@ -4,7 +4,7 @@
 
     <header class="flex flex-col">
 
-        <nav class="fixed top-0 flex w-full items-center justify-center bg-white">
+        <nav class="fixed top-0 z-40 flex w-full items-center justify-center bg-white">
             <div class="flex w-full max-w-screen-xl items-center justify-between gap-5 p-5 2xl:max-w-screen-2xl">
                 <div title="SMA Negeri 10 Kaur Pentagon" class="flex items-center justify-center gap-3">
                     <img src="/images/logo.png" alt="Logo" class="w-14">
@@ -20,11 +20,29 @@
                             Beranda
                         </a>
                     </li>
-                    <li title="Tentang">
-                        <a href="" class="">
+                    <li title="Tentang" x-data="{
+                        about: false
+                    }">
+                        <button x-on:click="about = !about" @class([
+                            'text-cstm-blue-900' => request()->routeIs(config('route.landing.about')),
+                        ])>
                             Tentang
                             <img src="/icons/v.svg" alt="V" class="inline-block aspect-auto w-2.5">
-                        </a>
+                        </button>
+                        <div x-show="about"
+                            class="absolute mt-1.5 flex w-24 flex-col gap-1.5 rounded-md border bg-white p-1.5 text-sm">
+                            <a href="{{ route(config('route.landing.about-profile')) }}" @class([
+                                'text-cstm-blue-900' => request()->routeIs(
+                                    config('route.landing.about-profile')),
+                            ])>
+                                Profil
+                            </a>
+                            <a href="" @class([
+                                'text-cstm-blue-900' => false,
+                            ])>
+                                PTK
+                            </a>
+                        </div>
                     </li>
                     <li title="Program">
                         <a href="{{ route(config('route.landing.program')) }}" @class([

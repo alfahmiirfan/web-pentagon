@@ -11,6 +11,8 @@ return [
     'landing' => [
         'home' => 'home',
         'program' => 'program',
+        'about' => 'about.*',
+        'about-profile' => 'about.profile',
     ],
 
     'admin' => [
