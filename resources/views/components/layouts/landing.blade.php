@@ -53,7 +53,12 @@
                         </a>
                     </li>
                     <li title="Prestasi">
-                        <a href="">Prestasi</a>
+                        <a href="{{ route(config('route.landing.achievement-home')) }}" @class([
+                            'text-cstm-blue-900' => request()->routeIs(
+                                config('route.landing.achievement')),
+                        ])>
+                            Prestasi
+                        </a>
                     </li>
                     <li title="Galeri">
                         <a href="">Galeri</a>

@@ -16,6 +16,8 @@ return [
         'about-ptk' => 'about.ptk.*',
         'about-ptk-home' => 'about.ptk.home',
         'about-ptk-detail' => 'about.ptk.detail',
+        'achievement' => 'achievement.*',
+        'achievement-home' => 'achievement.home',
     ],
 
     'admin' => [

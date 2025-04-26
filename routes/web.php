@@ -24,6 +24,7 @@ use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
+use App\Http\Controllers\Web\Landing\AchievementLandingController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
@@ -40,6 +41,7 @@ Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('ro
 Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk-home'));
 Route::get('ptk/lihat', [PTKLandingController::class, 'detail'])->name(config('route.landing.about-ptk-detail'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
+Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {
