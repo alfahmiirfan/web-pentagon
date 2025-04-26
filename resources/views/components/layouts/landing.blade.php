@@ -68,7 +68,11 @@
                         </a>
                     </li>
                     <li title="Alumni">
-                        <a href="">Alumni</a>
+                        <a href="{{ route(config('route.landing.alumni-home')) }}" @class([
+                            'text-cstm-blue-900' => request()->routeIs(config('route.landing.alumni')),
+                        ])>
+                            Alumni
+                        </a>
                     </li>
                     <li title="Informasi">
                         <a href="">Informasi</a>

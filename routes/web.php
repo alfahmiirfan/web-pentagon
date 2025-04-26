@@ -33,6 +33,7 @@ use App\Http\Controllers\Web\Landing\GalleryLandingController;
 use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
+use App\Http\Controllers\Web\Landing\AlumniLandingController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use App\Http\Controllers\Web\Landing\PTKLandingController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,7 @@ Route::get('program', [ProgramLandingController::class, 'view'])->name(config('r
 Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
 Route::get('prestasi/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
 Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('route.landing.gallery'));
+Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('route.landing.alumni-home'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

@@ -20,6 +20,8 @@ return [
         'achievement-home' => 'achievement.home',
         'achievement-detail' => 'achievement.detail',
         'gallery' => 'gallery',
+        'alumni' => 'alumni.*',
+        'alumni-home' => 'alumni.home',
     ],
 
     'admin' => [
