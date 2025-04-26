@@ -18,7 +18,7 @@
     <div class="flex min-h-screen flex-col items-center justify-center">
         <div class="flex w-full max-w-screen-xl items-center justify-between gap-10 px-5 py-10 2xl:max-w-screen-2xl">
             <div class="flex flex-1 items-center justify-start">
-                <img src="/images/landing/program/nanotechnology.jpg" alt="Nanotechnology" class="w-5/6 rounded-lg">
+                <img src="/images/landing/nanotechnology.jpg" alt="Nanotechnology" class="w-5/6 rounded-lg">
             </div>
             <div class="flex flex-1 flex-col items-start justify-center gap-5">
                 <div class="h-1 w-20 bg-cstm-green-900"></div>
@@ -46,7 +46,7 @@
         <div
             class="flex w-full max-w-screen-xl flex-row-reverse items-center justify-between gap-10 px-5 py-10 2xl:max-w-screen-2xl">
             <div class="flex flex-1 items-center justify-end">
-                <img src="/images/landing/program/biotechnology.jpg" alt="Biotechnology" class="w-5/6 rounded-lg">
+                <img src="/images/landing/biotechnology.jpg" alt="Biotechnology" class="w-5/6 rounded-lg">
             </div>
             <div class="flex flex-1 flex-col items-start justify-center gap-5">
                 <div class="h-1 w-20 bg-cstm-green-900"></div>
@@ -73,7 +73,7 @@
         </div>
         <div class="flex w-full max-w-screen-xl items-center justify-between gap-10 px-5 py-10 2xl:max-w-screen-2xl">
             <div class="flex flex-1 items-center justify-start">
-                <img src="/images/landing/program/robotic.jpg" alt="Robotic" class="w-5/6 rounded-lg">
+                <img src="/images/landing/robotic.jpg" alt="Robotic" class="w-5/6 rounded-lg">
             </div>
             <div class="flex flex-1 flex-col items-start justify-center gap-5">
                 <div class="h-1 w-20 bg-cstm-green-900"></div>
@@ -101,7 +101,7 @@
         <div
             class="flex w-full max-w-screen-xl flex-row-reverse items-center justify-between gap-10 px-5 py-10 2xl:max-w-screen-2xl">
             <div class="flex flex-1 items-center justify-end">
-                <img src="/images/landing/program/energy.jpg" alt="Energy" class="w-5/6 rounded-lg">
+                <img src="/images/landing/energy.jpg" alt="Energy" class="w-5/6 rounded-lg">
             </div>
             <div class="flex flex-1 flex-col items-start justify-center gap-5">
                 <div class="h-1 w-20 bg-cstm-green-900"></div>

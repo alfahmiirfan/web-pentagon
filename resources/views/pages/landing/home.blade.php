@@ -1,7 +1,7 @@
 <x-layouts.landing title="Beranda | {{ config('app.name') }}">
 
     <div class="flex flex-col bg-cover bg-center bg-no-repeat"
-        style="background-image: url('/images/landing/home/hero.jpg')">
+        style="background-image: url('/images/landing/hero.jpg')">
         <div class="flex min-h-screen w-full flex-1 items-center justify-center bg-black/50">
             <div
                 class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-12 p-5 pt-20 2xl:max-w-screen-2xl">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="aspect-[15/7] w-full overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat"
-                style="background-image: url('/images/landing/home/brochure.jpg')"></div>
+                style="background-image: url('/images/landing/brochure.jpg')"></div>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
                 <div
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Nanotechnology" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/home/program-nano.jpg')">
+                        style="background-image: url('/images/landing/program-nano.jpg')">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4">
                         <h6 title="Nanotechnology" class="font-medium">
@@ -73,7 +73,7 @@
                 <div
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Biotechnology" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/home/program-bio.jpg')">
+                        style="background-image: url('/images/landing/program-bio.jpg')">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4">
                         <h6 title="Biotechnology" class="font-medium">
@@ -87,7 +87,7 @@
                 <div
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Robotic" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/home/program-robotic.jpg')">
+                        style="background-image: url('/images/landing/program-robotic.jpg')">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4">
                         <h6 title="Robotic" class="font-medium">
@@ -101,7 +101,7 @@
                 <div
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Renewable Energy" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/home/program-energy.jpg')">
+                        style="background-image: url('/images/landing/program-energy.jpg')">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4">
                         <h6 title="Renewable Energy" class="font-medium">
