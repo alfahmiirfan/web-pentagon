@@ -37,7 +37,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.landing.home'));
 Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
-Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk'));
+Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk-home'));
+Route::get('ptk/lihat', [PTKLandingController::class, 'detail'])->name(config('route.landing.about-ptk-detail'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 
 // ADMIN

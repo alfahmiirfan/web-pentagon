@@ -13,7 +13,9 @@ return [
         'program' => 'program',
         'about' => 'about.*',
         'about-profile' => 'about.profile',
-        'about-ptk' => 'about.ptk',
+        'about-ptk' => 'about.ptk.*',
+        'about-ptk-home' => 'about.ptk.home',
+        'about-ptk-detail' => 'about.ptk.detail',
     ],
 
     'admin' => [

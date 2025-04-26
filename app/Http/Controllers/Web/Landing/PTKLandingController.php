@@ -14,4 +14,12 @@ class PTKLandingController extends Controller
     {
         return view('pages.landing.ptk.home');
     }
+
+    /**
+     * @return View
+     */
+    public function detail(): View
+    {
+        return view('pages.landing.ptk.detail');
+    }
 }
