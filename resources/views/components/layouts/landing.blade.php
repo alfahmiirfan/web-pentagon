@@ -63,18 +63,24 @@
             <div
                 class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-5 px-5 py-16 2xl:max-w-screen-2xl">
                 <p title="Alamat" class="w-full text-lg">
-                    <span class="font-medium text-cstm-blue-900">ALAMAT</span> 6391 Elgin St. Celina, Delaware 10299
+                    <span class="inline-block w-24 font-medium text-cstm-blue-900">ALAMAT</span>
+                    <span class="font-medium text-cstm-blue-900">:</span>
+                    Gedung Sako II, Kecamatan Kaur Selatan, Kabupaten Kaur, Provinsi Bengkulu, Kode POS 38563
                 </p>
                 <p title="Telepon" class="w-full text-lg">
-                    <span class="font-medium text-cstm-blue-900">TELEPON</span> +84 1102 2703
+                    <span class="inline-block w-24 font-medium text-cstm-blue-900">TELEPON</span>
+                    <span class="font-medium text-cstm-blue-900">:</span>
+                    08XXXXXXXXXX
                 </p>
                 <p title="Email" class="w-full text-lg">
-                    <span class="font-medium text-cstm-blue-900">EMAIL</span> hello@thebox.com
+                    <span class="inline-block w-24 font-medium text-cstm-blue-900">EMAIL</span>
+                    <span class="font-medium text-cstm-blue-900">:</span>
+                    sman10pentagon.kaur@gmail.com
                 </p>
                 <div class="grid w-full grid-cols-2">
                     <div title="SMA Negeri 10 Kaur Pentagon" class="flex items-center justify-start gap-3 text-lg">
                         <img src="/images/logo.png" alt="Logo" class="w-12">
-                        <p class="font-medium text-cstm-blue-900">
+                        <p class="font-bold text-cstm-blue-900">
                             SMA Negeri 10 Kaur Pentagon
                         </p>
                     </div>
