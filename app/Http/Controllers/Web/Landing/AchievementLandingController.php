@@ -14,4 +14,12 @@ class AchievementLandingController extends Controller
     {
         return view('pages.landing.achievement.home');
     }
+
+    /**
+     * @return View
+     */
+    public function detail(): View
+    {
+        return view('pages.landing.achievement.detail');
+    }
 }

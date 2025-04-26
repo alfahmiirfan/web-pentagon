@@ -10,14 +10,15 @@ return [
 
     'landing' => [
         'home' => 'home',
-        'program' => 'program',
         'about' => 'about.*',
         'about-profile' => 'about.profile',
         'about-ptk' => 'about.ptk.*',
         'about-ptk-home' => 'about.ptk.home',
         'about-ptk-detail' => 'about.ptk.detail',
+        'program' => 'program',
         'achievement' => 'achievement.*',
         'achievement-home' => 'achievement.home',
+        'achievement-detail' => 'achievement.detail',
     ],
 
     'admin' => [

@@ -42,6 +42,7 @@ Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.lan
 Route::get('ptk/lihat', [PTKLandingController::class, 'detail'])->name(config('route.landing.about-ptk-detail'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
+Route::get('prestasi/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {
