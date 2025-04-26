@@ -32,10 +32,12 @@ use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
+use App\Http\Controllers\Web\Landing\PTKLandingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.landing.home'));
 Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
+Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 
 // ADMIN

@@ -37,8 +37,9 @@
                             ])>
                                 Profil
                             </a>
-                            <a href="" @class([
-                                'text-cstm-blue-900' => false,
+                            <a href="{{ route(config('route.landing.about-ptk')) }}" @class([
+                                'text-cstm-blue-900' => request()->routeIs(
+                                    config('route.landing.about-ptk')),
                             ])>
                                 PTK
                             </a>

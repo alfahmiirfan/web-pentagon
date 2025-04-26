@@ -7,7 +7,7 @@
                 Profile SMA Negeri 10 Kaur Pentagon
             </h1>
             <p title="Komitmen Kami dalam Membangun Generasi Unggul Berbasis Teknologi"
-                class="w-full text-xl font-semibold text-gray-500">
+                class="w-full text-xl text-gray-500">
                 Komitmen Kami dalam Membangun Generasi Unggul Berbasis Teknologi
             </p>
         </div>

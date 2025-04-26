@@ -9,7 +9,7 @@
             <h1 title="SMA Negeri 10 Kaur Pentagon" class="w-full text-4xl font-bold">
                 SMA Negeri 10 Kaur Pentagon
             </h1>
-            <p title="Bergabunglah Bersama Kami di Tahun Ajaran Baru!" class="w-full text-xl font-semibold text-gray-500">
+            <p title="Bergabunglah Bersama Kami di Tahun Ajaran Baru!" class="w-full text-xl text-gray-500">
                 Bergabunglah Bersama Kami di Tahun Ajaran Baru!
             </p>
         </div>

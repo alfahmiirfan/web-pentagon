@@ -13,6 +13,7 @@ return [
         'program' => 'program',
         'about' => 'about.*',
         'about-profile' => 'about.profile',
+        'about-ptk' => 'about.ptk',
     ],
 
     'admin' => [
