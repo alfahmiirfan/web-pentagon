@@ -29,6 +29,7 @@ use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
+use App\Http\Controllers\Web\Landing\GalleryLandingController;
 use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
@@ -43,6 +44,7 @@ Route::get('ptk/lihat', [PTKLandingController::class, 'detail'])->name(config('r
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
 Route::get('prestasi/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
+Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('route.landing.gallery'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

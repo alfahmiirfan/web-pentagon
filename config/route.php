@@ -19,6 +19,7 @@ return [
         'achievement' => 'achievement.*',
         'achievement-home' => 'achievement.home',
         'achievement-detail' => 'achievement.detail',
+        'gallery' => 'gallery',
     ],
 
     'admin' => [
