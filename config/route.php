@@ -22,6 +22,7 @@ return [
         'gallery' => 'gallery',
         'alumni' => 'alumni.*',
         'alumni-home' => 'alumni.home',
+        'alumni-detail' => 'alumni.detail',
     ],
 
     'admin' => [

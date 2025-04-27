@@ -47,6 +47,7 @@ Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(conf
 Route::get('prestasi/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
 Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('route.landing.gallery'));
 Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('route.landing.alumni-home'));
+Route::get('alumni/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

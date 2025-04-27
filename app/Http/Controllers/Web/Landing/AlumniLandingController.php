@@ -14,4 +14,12 @@ class AlumniLandingController extends Controller
     {
         return view('pages.landing.alumni.home');
     }
+
+    /**
+     * @return View
+     */
+    public function detail(): View
+    {
+        return view('pages.landing.alumni.detail');
+    }
 }
