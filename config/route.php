@@ -25,6 +25,7 @@ return [
         'alumni-detail' => 'alumni.detail',
         'information' => 'information.*',
         'information-home' => 'information.home',
+        'information-detail' => 'information.detail',
     ],
 
     'admin' => [

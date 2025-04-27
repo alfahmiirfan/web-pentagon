@@ -14,4 +14,12 @@ class InformationLandingController extends Controller
     {
         return view('pages.landing.information.home');
     }
+
+    /**
+     * @return View
+     */
+    public function detail(): View
+    {
+        return view('pages.landing.information.detail');
+    }
 }
