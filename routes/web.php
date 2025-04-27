@@ -25,6 +25,7 @@ use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
 use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Landing\AchievementLandingController;
+use App\Http\Controllers\Web\Landing\InformationLandingController;
 use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
@@ -48,6 +49,7 @@ Route::get('prestasi/lihat', [AchievementLandingController::class, 'detail'])->n
 Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('route.landing.gallery'));
 Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('route.landing.alumni-home'));
 Route::get('alumni/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
+Route::get('informasi', [InformationLandingController::class, 'view'])->name(config('route.landing.information-home'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

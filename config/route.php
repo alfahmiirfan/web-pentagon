@@ -23,6 +23,8 @@ return [
         'alumni' => 'alumni.*',
         'alumni-home' => 'alumni.home',
         'alumni-detail' => 'alumni.detail',
+        'information' => 'information.*',
+        'information-home' => 'information.home',
     ],
 
     'admin' => [

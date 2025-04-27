@@ -75,7 +75,12 @@
                         </a>
                     </li>
                     <li title="Informasi">
-                        <a href="">Informasi</a>
+                        <a href="{{ route(config('route.landing.information-home')) }}" @class([
+                            'text-cstm-blue-900' => request()->routeIs(
+                                config('route.landing.information')),
+                        ])>
+                            Informasi
+                        </a>
                     </li>
                 </ul>
             </div>
