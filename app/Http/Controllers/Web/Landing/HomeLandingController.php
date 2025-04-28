@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Landing;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use App\Models\Information;
 
 class HomeLandingController extends Controller
 {
@@ -12,6 +13,10 @@ class HomeLandingController extends Controller
      */
     public function view(): View
     {
-        return view('pages.landing.home');
+        $informations = Information::latest()->limit(3)->get();
+
+        return view('pages.landing.home', compact([
+            'informations'
+        ]));
     }
 }
