@@ -2,25 +2,25 @@
 
     <div class="flex justify-center bg-cstm-green-50">
         <div
-            class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-2.5 px-5 pb-12 pt-36 2xl:max-w-screen-2xl">
-            <h1 title="Profile SMA Negeri 10 Kaur Pentagon" class="w-full text-4xl font-bold">
+            class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-2.5 px-5 pb-6 pt-36 sm:pb-10 md:pb-12 2xl:max-w-screen-2xl">
+            <h1 title="Profile SMA Negeri 10 Kaur Pentagon" class="w-full text-2xl font-bold sm:text-3xl lg:text-4xl">
                 Profile SMA Negeri 10 Kaur Pentagon
             </h1>
             <p title="Komitmen Kami dalam Membangun Generasi Unggul Berbasis Teknologi"
-                class="w-full text-xl text-gray-500">
+                class="w-full text-gray-500 sm:text-lg lg:text-xl">
                 Komitmen Kami dalam Membangun Generasi Unggul Berbasis Teknologi
             </p>
         </div>
     </div>
 
-    <div class="flex min-h-screen flex-col items-center justify-center bg-cstm-green-50">
+    <div class="flex flex-col items-center justify-center bg-cstm-green-50">
         <div class="relative z-0 flex w-full max-w-screen-xl px-5 py-10 2xl:max-w-screen-2xl">
-            <div class="aspect-[3/2] w-2/3 rounded-xl bg-white bg-cover bg-center bg-no-repeat"
+            <div class="hidden aspect-[3/2] w-full rounded-xl bg-white bg-cover bg-center bg-no-repeat sm:block lg:w-2/3"
                 style="background-image: url('/images/landing/hero.jpg')">
             </div>
             <div
-                class="absolute left-[45%] top-1/2 flex w-1/2 -translate-y-1/2 flex-col gap-5 rounded-lg bg-cstm-blue-900 p-10 text-white">
-                <h5 title="Sejarah" class="text-4xl font-bold">
+                class="left-1/2 mx-auto flex w-full flex-col gap-3 rounded-lg bg-cstm-blue-900 p-6 text-sm text-white sm:absolute sm:top-1/2 sm:w-10/12 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:gap-5 sm:text-base lg:left-[45%] lg:w-1/2 lg:translate-x-0 lg:p-10">
+                <h5 title="Sejarah" class="text-2xl font-bold sm:text-3xl lg:text-4xl">
                     Sejarah
                 </h5>
                 <p
@@ -42,19 +42,16 @@
 
     <div class="flex min-h-screen flex-col items-center justify-center">
         <div
-            class="flex w-full max-w-screen-xl flex-row-reverse items-center justify-between gap-10 px-5 py-10 2xl:max-w-screen-2xl">
-            <div class="flex flex-1 items-center justify-end">
-                <img src="/images/landing/students.jpg" alt="Siswa" class="w-5/6 rounded-lg">
-            </div>
-            <div class="flex flex-1 flex-col items-start justify-center gap-5">
+            class="flex w-full max-w-screen-xl flex-wrap-reverse items-center justify-between gap-6 px-5 py-10 md:gap-10 2xl:max-w-screen-2xl">
+            <div class="flex flex-1 flex-col items-start justify-center gap-3 max-md:text-sm md:gap-5">
                 <div class="h-1 w-20 bg-cstm-green-900"></div>
-                <h5 title="Visi" class="text-4xl font-bold">
+                <h5 title="Visi" class="text-xl font-bold sm:text-2xl lg:text-4xl">
                     Visi
                 </h5>
                 <p title="“Berkualitas, Berperadaban, Berkearifan Lokal, Berwawasan Nasional dan Global”">
                     “Berkualitas, Berperadaban, Berkearifan Lokal, Berwawasan Nasional dan Global”
                 </p>
-                <h5 title="Misi" class="text-4xl font-bold">
+                <h5 title="Misi" class="text-xl font-bold sm:text-2xl lg:text-4xl">
                     Misi
                 </h5>
                 <ul class="list-disc pl-5 text-cstm-green-900">
@@ -93,17 +90,20 @@
                     </li>
                 </ul>
             </div>
+            <div class="flex items-center justify-center max-md:w-full md:flex-1 md:justify-end">
+                <img src="/images/landing/students.jpg" alt="Siswa" class="w-5/6 rounded-lg">
+            </div>
         </div>
     </div>
 
     <div class="flex justify-center bg-cstm-green-50">
         <div
             class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-2.5 px-5 py-12 2xl:max-w-screen-2xl">
-            <h1 title="Struktur Organisasi" class="w-full text-4xl font-bold">
+            <h1 title="Struktur Organisasi" class="w-full text-2xl font-bold sm:text-3xl lg:text-4xl">
                 Struktur Organisasi
             </h1>
             <p title="Untuk menjalankan fungsi manajerial dan operasional sekolah secara optimal, SMA Negeri 10 Kaur memiliki struktur organisasi yang tersusun rapi dengan pembagian tugas."
-                class="w-full text-xl font-semibold text-gray-500">
+                class="w-full text-gray-500 sm:text-lg lg:text-xl">
                 Untuk menjalankan fungsi manajerial dan operasional sekolah secara optimal, SMA Negeri 10 Kaur memiliki
                 struktur organisasi yang tersusun rapi dengan pembagian tugas.
             </p>
