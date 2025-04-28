@@ -2,35 +2,18 @@
 
     <div class="flex min-h-screen flex-col items-center justify-center">
         <div class="flex w-full max-w-screen-xl flex-col gap-3 px-5 pb-10 pt-40 text-justify 2xl:max-w-screen-2xl">
-            <h6 class="text-3xl font-bold text-cstm-blue-900">
-                Budianto Spd
+            <h6 title="{{ $ptk->name }}"
+                class="line-clamp-1 text-xl font-bold text-cstm-blue-900 sm:text-2xl md:text-3xl">
+                {{ $ptk->name }}
             </h6>
-            <p class="text-gray-500">
-                Kepala Sekolah
+            <p title="{{ $ptk->position }}" class="line-clamp-1 text-gray-500">
+                {{ $ptk->position }}
             </p>
             <div class="aspect-[2/1] w-full rounded-lg bg-cover bg-center bg-no-repeat"
-                style="background-image: url('/images/landing/hero.jpg')">
+                style="background-image: url('/storage/{{ $ptk->image }}')">
             </div>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, laboriosam? Quibusdam repellendus
-                reprehenderit totam dolorem dolorum impedit harum, ad in a amet voluptates ipsam debitis ullam quia ex
-                nemo molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptatem error
-                dolorem assumenda consectetur quis maxime obcaecati, veritatis, earum nam magni explicabo molestias est
-                eaque autem quod laudantium saepe nesciunt.
-            </p>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, laboriosam? Quibusdam repellendus
-                reprehenderit totam dolorem dolorum impedit harum, ad in a amet voluptates ipsam debitis ullam quia ex
-                nemo molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptatem error
-                dolorem assumenda consectetur quis maxime obcaecati, veritatis, earum nam magni explicabo molestias est
-                eaque autem quod laudantium saepe nesciunt.
-            </p>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, laboriosam? Quibusdam repellendus
-                reprehenderit totam dolorem dolorum impedit harum, ad in a amet voluptates ipsam debitis ullam quia ex
-                nemo molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptatem error
-                dolorem assumenda consectetur quis maxime obcaecati, veritatis, earum nam magni explicabo molestias est
-                eaque autem quod laudantium saepe nesciunt.
+                {!! nl2br($ptk->description) !!}
             </p>
         </div>
     </div>

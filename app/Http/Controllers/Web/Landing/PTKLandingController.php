@@ -23,8 +23,10 @@ class PTKLandingController extends Controller
     /**
      * @return View
      */
-    public function detail(): View
+    public function detail(PTK $ptk): View
     {
-        return view('pages.landing.ptk.detail');
+        return view('pages.landing.ptk.detail', compact([
+            'ptk'
+        ]));
     }
 }
