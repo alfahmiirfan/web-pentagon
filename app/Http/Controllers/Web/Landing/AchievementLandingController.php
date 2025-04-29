@@ -23,8 +23,10 @@ class AchievementLandingController extends Controller
     /**
      * @return View
      */
-    public function detail(): View
+    public function detail(Achievement $achievement): View
     {
-        return view('pages.landing.achievement.detail');
+        return view('pages.landing.achievement.detail', compact([
+            'achievement'
+        ]));
     }
 }
