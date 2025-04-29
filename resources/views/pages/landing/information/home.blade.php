@@ -1,14 +1,17 @@
 <x-layouts.landing title="Informasi | {{ config('app.name') }}">
 
     <div class="flex justify-center" x-data="{
-        data: [],
+        data: {{ json_encode($informations) }},
         currentPage: 1,
-        perpage: 20,
+        perpage: 6,
         maxPage: 1,
         search: '',
         get filteredData() {
             return this.data.filter(item => (
-                this.search === ''
+                this.search === '' ||
+                item.description.toLowerCase().includes(this.search.toLowerCase()) ||
+                item.date.toLowerCase().includes(this.search.toLowerCase()) ||
+                item.name.toLowerCase().includes(this.search.toLowerCase())
             ));
         },
         get paginatedData() {
@@ -29,42 +32,42 @@
         },
     }">
         <div class="flex w-full max-w-screen-xl flex-col gap-5 px-5 pb-12 pt-36 2xl:max-w-screen-2xl">
-            <div class="flex items-center justify-between mb-5">
-                <div>
-                    <h4 title="" class="text-xl font-bold text-cstm-blue-900">
+            <div class="mb-5 flex flex-wrap items-center justify-center gap-3">
+                <div class="mr-auto">
+                    <h4 title="Informasi" class="text-xl font-bold text-cstm-blue-900">
                         Informasi
                     </h4>
-                    <p>
+                    <p title="Informasi terkini mengenai SMA Negeri 10 Kaur Pentagon">
                         Informasi terkini mengenai SMA Negeri 10 Kaur Pentagon
                     </p>
                 </div>
                 <label for="search"
-                    class="flex w-96 items-center justify-center overflow-hidden rounded-full border border-cstm-blue-900">
-                    <input type="search" name="search" id="search" placeholder="Cari"
+                    class="ml-auto flex w-96 items-center justify-center overflow-hidden rounded-full border border-cstm-blue-900">
+                    <input type="search" id="search" x-model.debounce="search" placeholder="Cari"
                         class="h-full flex-1 rounded-l-full px-3 py-1">
                     <img src="/icons/search.svg" alt="search" class="mr-3 w-4">
                 </label>
             </div>
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid sm:grid-cols-2 gap-3">
 
-                @for ($i = 0; $i < 6; $i++)
-                    <a href="" class="flex items-center justify-start gap-5 rounded-md bg-cstm-green-50 p-5">
-                        <div class="aspect-square h-full rounded-md bg-pink-300"></div>
+                <template x-for="item in paginatedData">
+                    <a x-bind:href="`{{ route(config('route.landing.information-detail'), ['information' => '###']) }}`.replace('###',
+                        item.id)"
+                        target="_blank" class="flex items-center justify-start gap-5 rounded-md bg-cstm-green-50 p-5">
+                        <div class="aspect-square h-full rounded-md bg-pink-300 bg-cover bg-center bg-no-repeat"
+                            x-bind:style="`background-image: url('/storage/${item.image}')`">
+                        </div>
                         <div class="flex flex-col gap-3">
-                            <p class="text-sm">
-                                20 April 2025
+                            <p x-bind:title="item.date" x-text="item.date" class="text-xs sm:text-sm">
                             </p>
-                            <p class="line-clamp-2 text-xl font-bold">
-                                M Rozin Asy
+                            <p x-bind:title="item.name" x-text="item.name" class="line-clamp-2 text-xl font-bold">
                             </p>
-                            <p class="line-clamp-2">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime beatae temporibus ea
-                                quae. Incidunt autem harum blanditiis ducimus veritatis tenetur aliquid iusto? Corporis
-                                necessitatibus cumque earum ducimus ipsa illum magnam.
+                            <p x-bind:title="item.description" x-text="item.description"
+                                class="line-clamp-2 text-sm sm:text-base">
                             </p>
                         </div>
                     </a>
-                @endfor
+                </template>
 
             </div>
 

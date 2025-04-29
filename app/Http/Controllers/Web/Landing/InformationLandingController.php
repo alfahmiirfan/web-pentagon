@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Landing;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use App\Models\Information;
 
 class InformationLandingController extends Controller
 {
@@ -12,7 +13,11 @@ class InformationLandingController extends Controller
      */
     public function view(): View
     {
-        return view('pages.landing.information.home');
+        $informations = Information::orderByDesc('date')->latest()->get();
+
+        return view('pages.landing.information.home', compact([
+            'informations'
+        ]));
     }
 
     /**
