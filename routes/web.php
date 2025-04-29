@@ -48,7 +48,7 @@ Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(conf
 Route::get('prestasi/{achievement}/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
 Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('route.landing.gallery'));
 Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('route.landing.alumni-home'));
-Route::get('alumni/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
+Route::get('alumni/{alumni}/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
 Route::get('informasi', [InformationLandingController::class, 'view'])->name(config('route.landing.information-home'));
 Route::get('informasi/lihat', [InformationLandingController::class, 'detail'])->name(config('route.landing.information-detail'));
 
