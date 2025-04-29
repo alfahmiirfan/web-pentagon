@@ -21,6 +21,8 @@ class AchievementLandingController extends Controller
     }
 
     /**
+     * @param \App\Models\Achievement $achievement
+     * 
      * @return View
      */
     public function detail(Achievement $achievement): View

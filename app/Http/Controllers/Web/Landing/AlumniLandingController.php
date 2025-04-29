@@ -21,10 +21,14 @@ class AlumniLandingController extends Controller
     }
 
     /**
+     * @param \App\Models\Alumni $alumni
+     * 
      * @return View
      */
-    public function detail(): View
+    public function detail(Alumni $alumni): View
     {
-        return view('pages.landing.alumni.detail');
+        return view('pages.landing.alumni.detail', compact([
+            'alumni'
+        ]));
     }
 }

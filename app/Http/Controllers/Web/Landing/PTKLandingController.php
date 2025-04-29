@@ -21,6 +21,8 @@ class PTKLandingController extends Controller
     }
 
     /**
+     * @param \App\Models\PTK $ptk
+     * 
      * @return View
      */
     public function detail(PTK $ptk): View
