@@ -21,10 +21,17 @@ class InformationLandingController extends Controller
     }
 
     /**
+     * @param \App\Models\Information $information
+     * 
      * @return View
      */
-    public function detail(): View
+    public function detail(Information $information): View
     {
-        return view('pages.landing.information.detail');
+        $others = Information::whereKeyNot($information->id)->orderByDesc('date')->latest()->limit(3)->get();
+
+        return view('pages.landing.information.detail', compact([
+            'information',
+            'others',
+        ]));
     }
 }

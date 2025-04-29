@@ -50,7 +50,7 @@ Route::get('galeri', [GalleryLandingController::class, 'view'])->name(config('ro
 Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('route.landing.alumni-home'));
 Route::get('alumni/{alumni}/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
 Route::get('informasi', [InformationLandingController::class, 'view'])->name(config('route.landing.information-home'));
-Route::get('informasi/lihat', [InformationLandingController::class, 'detail'])->name(config('route.landing.information-detail'));
+Route::get('informasi/{information}/lihat', [InformationLandingController::class, 'detail'])->name(config('route.landing.information-detail'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {
