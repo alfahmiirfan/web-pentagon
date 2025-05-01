@@ -56,6 +56,7 @@ Route::get('informasi/{information}/lihat', [InformationLandingController::class
 
 // AUTHENTICATION
 Route::get('masuk', [LoginController::class, 'view'])->name(config('route.auth.login'));
+Route::post('masuk', [LoginController::class, 'action'])->name(config('route.auth.login-action'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

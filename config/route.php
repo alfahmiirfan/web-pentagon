@@ -30,6 +30,7 @@ return [
 
     'auth' => [
         'login' => 'login',
+        'login-action' => 'login.action',
     ],
 
     'admin' => [

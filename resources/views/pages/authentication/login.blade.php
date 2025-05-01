@@ -13,7 +13,10 @@
                     SMA Negeri 10 Kaur Pentagon
                 </h3>
             </a>
-            <form class="m-auto flex w-72 flex-col gap-3 md:p-3 *:flex-1 max-sm:text-sm md:w-96">
+            <form action="{{ route(config('route.auth.login-action')) }}" method="POST"
+                class="m-auto flex w-72 flex-col gap-3 *:flex-1 max-sm:text-sm md:w-96 md:p-3">
+                @csrf
+
                 <p title="Selamat Datang" class="text-center text-xl font-bold">
                     Selamat Datang
                 </p>
@@ -26,6 +29,14 @@
                 <x-labels.default text="Kata Sandi" for="password">
                     <x-inputs.password name="password" placeholder="Kata Sandi" />
                 </x-labels.default>
+
+                @error('error')
+                    <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
+                        <img src="/icons/info.svg" alt="" class="w-4">
+                        {{ $message }}
+                    </p>
+                @enderror
+
                 <button type="submit" class="mt-4 rounded-lg bg-cstm-blue-900 py-1.5 text-center text-white">
                     Masuk
                 </button>
