@@ -9,9 +9,9 @@
         </h2>
         <div class="flex items-center justify-center gap-3">
             <p>
-                Admin
+                {{ auth()->user()?->name ?? '' }}
             </p>
-            <div class="aspect-square w-10 rounded-full bg-cstm-blue-900"></div>
+            <img src="/images/user.png" alt="User" class="w-8">
         </div>
     </nav>
 
@@ -56,6 +56,10 @@
                     href="{{ route(config('route.admin.alumni.home')) }}" text="Alumni" />
             </li>
         </ul>
+        <a href="{{ route(config('route.auth.logout')) }}"
+            class="rounded-lg bg-red-500 px-0.5 py-1 text-center text-white hover:bg-red-400">
+            Keluar
+        </a>
     </aside>
 
     <main class="flex min-h-screen w-full items-start justify-start overflow-y-auto overflow-x-hidden bg-gray-100 p-5">

@@ -33,6 +33,7 @@ use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
 use App\Http\Controllers\Web\Landing\GalleryLandingController;
 use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
+use App\Http\Controllers\Web\Authentication\LogoutController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\AlumniLandingController;
 use App\Http\Controllers\Web\Authentication\LoginController;
@@ -57,9 +58,10 @@ Route::get('informasi/{information}/lihat', [InformationLandingController::class
 // AUTHENTICATION
 Route::get('masuk', [LoginController::class, 'view'])->name(config('route.auth.login'));
 Route::post('masuk', [LoginController::class, 'action'])->name(config('route.auth.login-action'));
+Route::any('keluar', [LogoutController::class, 'action'])->name(config('route.auth.logout'));
 
 // ADMIN
-Route::prefix('admin')->group(function (): void {
+Route::prefix('admin')->middleware('auth')->group(function (): void {
 
     // Dashboard
     Route::prefix('beranda')->group(function (): void {
