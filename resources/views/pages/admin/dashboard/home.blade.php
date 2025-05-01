@@ -10,7 +10,7 @@
                 Kegiatan Asrama
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $activities->count() }}
             </p>
         </div>
         <div class="flex flex-col gap-5 rounded-lg bg-cstm-blue-900/10 p-5">
@@ -18,7 +18,7 @@
                 Fasilitas
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $facilities->count() }}
             </p>
         </div>
         <div class="flex flex-col gap-5 rounded-lg bg-cstm-blue-900/10 p-5">
@@ -26,7 +26,7 @@
                 Informasi
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $informations->count() }}
             </p>
         </div>
         <div class="flex flex-col gap-5 rounded-lg bg-cstm-blue-900/10 p-5">
@@ -34,7 +34,7 @@
                 PTK
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $ptks->count() }}
             </p>
         </div>
         <div class="flex flex-col gap-5 rounded-lg bg-cstm-blue-900/10 p-5">
@@ -42,7 +42,7 @@
                 Prestasi
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $achievements->count() }}
             </p>
         </div>
         <div class="flex flex-col gap-5 rounded-lg bg-cstm-blue-900/10 p-5">
@@ -50,7 +50,7 @@
                 Alumni
             </p>
             <p class="text-3xl font-bold">
-                150
+                {{ $alumnis->count() }}
             </p>
         </div>
     </div>
@@ -61,9 +61,9 @@
                 Informasi Terkini
             </p>
 
-            @foreach ([1, 2, 3] as $item)
+            @foreach ($informations->slice(0, 5)->all() as $item)
                 <p class="line-clamp-1 text-gray-500">
-                    Alumni
+                    {{ $item->name }}
                 </p>
             @endforeach
 
@@ -73,11 +73,9 @@
                 Prestasi Terbaru
             </p>
 
-            @foreach ([1, 2, 3, 4, 5, 6, 7, 8] as $item)
+            @foreach ($achievements->slice(0, 5)->all() as $item)
                 <p class="line-clamp-1 text-gray-500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime ad sed cupiditate corporis iure,
-                    explicabo commodi debitis dicta, nostrum soluta deleniti exercitationem ab inventore a at iste
-                    voluptatum aut perspiciatis?
+                    {{ $item->name }}
                 </p>
             @endforeach
 
