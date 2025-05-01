@@ -35,10 +35,12 @@ use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\AlumniLandingController;
+use App\Http\Controllers\Web\Authentication\LoginController;
 use App\Http\Controllers\Web\Landing\HomeLandingController;
 use App\Http\Controllers\Web\Landing\PTKLandingController;
 use Illuminate\Support\Facades\Route;
 
+// LANDING
 Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.landing.home'));
 Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
 Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk-home'));
@@ -51,6 +53,9 @@ Route::get('alumni', [AlumniLandingController::class, 'view'])->name(config('rou
 Route::get('alumni/{alumni}/lihat', [AlumniLandingController::class, 'detail'])->name(config('route.landing.alumni-detail'));
 Route::get('informasi', [InformationLandingController::class, 'view'])->name(config('route.landing.information-home'));
 Route::get('informasi/{information}/lihat', [InformationLandingController::class, 'detail'])->name(config('route.landing.information-detail'));
+
+// AUTHENTICATION
+Route::get('masuk', [LoginController::class, 'view'])->name(config('route.auth.login'));
 
 // ADMIN
 Route::prefix('admin')->group(function (): void {

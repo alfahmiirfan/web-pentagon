@@ -28,6 +28,10 @@ return [
         'information-detail' => 'information.detail',
     ],
 
+    'auth' => [
+        'login' => 'login',
+    ],
+
     'admin' => [
 
         'dashboard' => [
