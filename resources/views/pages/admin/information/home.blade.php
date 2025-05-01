@@ -1,5 +1,6 @@
 <x-layouts.admin title="Informasi | Admin | {{ config('app.name') }}" x-data="{
     data: {{ json_encode($data) }},
+    selected: {{ $selected }},
     perpageData: [20, 15, 10, 5],
     currentPage: 1,
     perpage: 20,
@@ -57,6 +58,7 @@
         <table class="w-full">
             <thead>
                 <tr class="text-white *:bg-cstm-green-900 *:p-1.5 first:*:rounded-tl-lg last:*:rounded-tr-lg">
+                    <th>Pilih</th>
                     <th>No</th>
                     <th>Tanggal</th>
                     <th>Judul Informasi</th>
@@ -68,6 +70,24 @@
 
                 <template x-for="(item, index) in paginatedData">
                     <tr class="border-b *:p-1.5 last:border-none">
+                        <td>
+                            <div class="flex items-center justify-center gap-3">
+                                <input type="checkbox" x-bind:checked="item.number !== null"
+                                    x-on:click="window.location.assign(`{{ route(config('route.admin.information.number.toggle'), ['information' => '###']) }}`.replace('###', item.id))"
+                                    class="scale-150 rounded-lg border-2 accent-cstm-blue-900">
+                                <select x-show="item.number !== null"
+                                    x-on:change="window.location.assign(`{{ route(config('route.admin.information.number.change'), ['information' => '###', 'number' => '___']) }}`.replace('###', item.id).replace('___', $el.value))"
+                                    class="rounded-lg border-2 px-1">
+
+                                    <template x-for="i in selected">
+                                        <option x-bind:value="i" x-text="i"
+                                            x-bind:selected="i === item.number">
+                                        </option>
+                                    </template>
+
+                                </select>
+                            </div>
+                        </td>
                         <td class="text-center" x-text="(currentPage - 1) * perpage + (index + 1)"></td>
                         <td class="text-center" x-text="new Date(item.date).toDateString()"></td>
                         <td x-text="item.name"></td>

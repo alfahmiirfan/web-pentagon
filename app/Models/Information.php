@@ -19,6 +19,7 @@ class Information extends Model
 
     protected $fillable = [
         'description',
+        'number',
         'image',
         'date',
         'name',

@@ -13,7 +13,7 @@ class HomeLandingController extends Controller
      */
     public function view(): View
     {
-        $informations = Information::latest()->limit(3)->get();
+        $informations = Information::whereNotNull('number')->orderBy('number')->get();
 
         return view('pages.landing.home', compact([
             'informations'

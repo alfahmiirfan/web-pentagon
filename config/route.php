@@ -71,6 +71,11 @@ return [
             'edit' => 'admin.information.edit',
             'edit-action' => 'admin.information.edit.action',
             'delete-action' => 'admin.information.delete.action',
+
+            'number' => [
+                'toggle' => 'admin.event.number.toggle',
+                'change' => 'admin.event.number.change',
+            ],
         ],
 
         'event' => [

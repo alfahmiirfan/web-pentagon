@@ -14,9 +14,11 @@ class HomeInformationAdminController extends Controller
     public function view(): View
     {
         $data = Information::orderByDesc('date')->latest()->get();
+        $selected = $data->whereNotNull('number')->count();
 
         return view('pages.admin.information.home', compact([
-            'data'
+            'selected',
+            'data',
         ]));
     }
 }

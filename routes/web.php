@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Admin\Achievement\DeleteAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
+use App\Http\Controllers\Web\Admin\Information\NumberInformationAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\EditAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\HomeAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\EditInformationAdminController;
@@ -96,6 +97,8 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::get('/{information}/ubah', [EditInformationAdminController::class, 'view'])->name(config('route.admin.information.edit'));
         Route::put('/{information}/ubah', [EditInformationAdminController::class, 'action'])->name(config('route.admin.information.edit-action'));
         Route::any('/{information}/hapus', [DeleteInformationAdminController::class, 'action'])->name(config('route.admin.information.delete-action'));
+        Route::any('/{information}/nomor', [NumberInformationAdminController::class, 'toggle'])->name(config('route.admin.information.number.toggle'));
+        Route::any('/{information}/{number}/nomor', [NumberInformationAdminController::class, 'change'])->name(config('route.admin.information.number.change'));
     });
 
     // Event
