@@ -21,27 +21,28 @@
         </div>
     </div>
 
-    @if ($informations->count())
-        <div id="jelajahi" class="flex min-h-screen justify-center" x-data="{
-            data: {{ json_encode($informations) }},
-            currentPage: 1,
-            perpage: 1,
-            maxPage: 1,
-            get paginatedData() {
-                const start = (this.currentPage - 1) * this.perpage;
-                const end = start + this.perpage;
-        
-                this.maxPage = parseInt(this.data.length / this.perpage) + (this.data.length % this.perpage === 0 ? 0 : 1);
-        
-                if (this.currentPage <= 1) {
-                    this.currentPage = 1;
-                } else if (this.currentPage > this.maxPage) {
-                    this.currentPage = this.maxPage;
-                }
-        
-                return this.data.slice(start, end);
-            },
-        }">
+    <div id="jelajahi" class="flex justify-center" x-data="{
+        data: {{ json_encode($informations) }},
+        currentPage: 1,
+        perpage: 1,
+        maxPage: 1,
+        get paginatedData() {
+            const start = (this.currentPage - 1) * this.perpage;
+            const end = start + this.perpage;
+    
+            this.maxPage = parseInt(this.data.length / this.perpage) + (this.data.length % this.perpage === 0 ? 0 : 1);
+    
+            if (this.currentPage <= 1) {
+                this.currentPage = 1;
+            } else if (this.currentPage > this.maxPage) {
+                this.currentPage = this.maxPage;
+            }
+    
+            return this.data.slice(start, end);
+        },
+    }">
+
+        @if ($informations->count())
             <template x-for="item in paginatedData">
                 <div
                     class="flex w-full max-w-screen-xl flex-col items-center justify-center px-5 py-20 2xl:max-w-screen-2xl">
@@ -64,12 +65,15 @@
                             <img src="/icons/arrow.svg" alt="Arrow" class="aspect-square w-6 rotate-180 md:w-8">
                         </button>
                     </div>
-                    <div class="aspect-[15/7] w-full overflow-hidden rounded-lg bg-cover bg-center bg-no-repeat shadow"
-                        x-bind:style="`background-image: url('/storage/${item.image}')`"></div>
+                    <div class="flex w-full items-center justify-center">
+                        <img x-bind:src="`/storage/${item.image}`" alt=""
+                            class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg shadow">
+                    </div>
                 </div>
             </template>
-        </div>
-    @endif
+        @endif
+
+    </div>
 
     <div class="flex min-h-screen justify-center bg-cstm-green-50">
         <div class="flex w-full max-w-screen-xl flex-col items-center justify-center px-5 py-20 2xl:max-w-screen-2xl">
