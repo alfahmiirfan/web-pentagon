@@ -48,7 +48,7 @@
                     <img src="/icons/search.svg" alt="search" class="mr-3 w-4">
                 </label>
             </div>
-            <div class="grid sm:grid-cols-2 gap-3">
+            <div class="grid gap-3 sm:grid-cols-2">
 
                 <template x-for="item in paginatedData">
                     <a x-bind:href="`{{ route(config('route.landing.information-detail'), ['information' => '###']) }}`.replace('###',
@@ -57,13 +57,13 @@
                         <div class="aspect-square h-full rounded-md bg-pink-300 bg-cover bg-center bg-no-repeat"
                             x-bind:style="`background-image: url('/storage/${item.image}')`">
                         </div>
-                        <div class="flex flex-col gap-3">
+                        <div class="flex flex-col gap-2.5">
                             <p x-bind:title="item.date" x-text="item.date" class="text-xs sm:text-sm">
                             </p>
-                            <p x-bind:title="item.name" x-text="item.name" class="line-clamp-2 text-xl font-bold">
+                            <p x-bind:title="item.name" x-text="item.name" class="line-clamp-1 text-xl font-bold">
                             </p>
                             <p x-bind:title="item.description" x-text="item.description"
-                                class="line-clamp-2 text-sm sm:text-base">
+                                class="line-clamp-1 text-sm sm:text-base">
                             </p>
                         </div>
                     </a>
