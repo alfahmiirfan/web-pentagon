@@ -7,7 +7,7 @@
                 class="line-clamp-1 text-xl font-bold text-cstm-blue-900 sm:text-2xl md:text-3xl">
                 {{ $alumni->name }}
             </h6>
-            <div class="aspect-[2/1] w-full rounded-lg bg-cover bg-center bg-no-repeat"
+            <div class="aspect-[2/1] w-full rounded-lg border bg-cover bg-center bg-no-repeat"
                 style="background-image: url('/storage/{{ $alumni->image }}')">
             </div>
             <h6 title="Alumni SMA Negeri 10 Kaur Pentagon" class="font-bold text-cstm-blue-900">

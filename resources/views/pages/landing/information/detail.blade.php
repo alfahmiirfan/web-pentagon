@@ -3,7 +3,7 @@
     <div class="flex min-h-screen flex-col items-center justify-center">
         <div
             class="flex w-full max-w-screen-xl flex-col gap-3 px-5 pb-10 pt-32 text-justify md:pt-40 2xl:max-w-screen-2xl">
-            <div class="aspect-[2/1] w-full rounded-lg bg-cover bg-center bg-no-repeat"
+            <div class="aspect-[2/1] w-full rounded-lg border bg-cover bg-center bg-no-repeat"
                 style="background-image: url('/storage/{{ $information->image }}')">
             </div>
             <h6 title="{{ $information->name }}" class="text-xl font-bold sm:text-2xl md:text-3xl">

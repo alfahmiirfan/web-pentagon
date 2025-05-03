@@ -10,7 +10,7 @@
             <p title="{{ $ptk->position }}" class="line-clamp-1 text-gray-500">
                 {{ $ptk->position }}
             </p>
-            <div class="aspect-[2/1] w-full rounded-lg bg-cover bg-center bg-no-repeat"
+            <div class="aspect-[2/1] w-full rounded-lg border bg-cover bg-center bg-no-repeat"
                 style="background-image: url('/storage/{{ $ptk->image }}')">
             </div>
             <p>
