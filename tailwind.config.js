@@ -1,5 +1,3 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -12,7 +10,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                primary: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+                // green
+                'cstm-green-900': '#018864',
+                'cstm-green-50': '#F6F8F7',
+
+                // blue
+                'cstm-blue-900': '#075186',
             },
         },
     },
