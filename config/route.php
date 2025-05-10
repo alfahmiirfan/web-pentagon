@@ -51,6 +51,12 @@ return [
             'delete-action' => 'admin.activity.delete.action',
         ],
 
+        'student-activity' => [
+            'base' => 'admin.student-activity.*',
+
+            'home' => 'admin.student-activity.home',
+        ],
+
         'facility' => [
             'base' => 'admin.facility.*',
 

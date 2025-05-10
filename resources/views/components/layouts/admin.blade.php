@@ -32,6 +32,10 @@
                     href="{{ route(config('route.admin.activity.home')) }}" text="Kegiatan Asrama" />
             </li>
             <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.student-activity.base')) }}"
+                    href="{{ route(config('route.admin.student-activity.home')) }}" text="Kesiswaan" />
+            </li>
+            <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.facility.base')) }}"
                     href="{{ route(config('route.admin.facility.home')) }}" text="Fasilitas" />
             </li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\DeleteAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Information\NumberInformationAdminController;
@@ -73,6 +74,11 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::get('/{activity}/ubah', [EditActivityAdminController::class, 'view'])->name(config('route.admin.activity.edit'));
         Route::put('/{activity}/ubah', [EditActivityAdminController::class, 'action'])->name(config('route.admin.activity.edit-action'));
         Route::any('/{activity}/hapus', [DeleteActivityAdminController::class, 'action'])->name(config('route.admin.activity.delete-action'));
+    });
+
+    // Student Activity
+    Route::prefix('kesiswaan')->group(function (): void {
+        Route::get('/', [HomeStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.home'));
     });
 
     // Facility
