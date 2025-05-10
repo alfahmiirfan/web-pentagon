@@ -21,13 +21,9 @@ use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\DeleteAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
-use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
-use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
-use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Landing\AchievementLandingController;
 use App\Http\Controllers\Web\Landing\InformationLandingController;
-use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
@@ -99,16 +95,6 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::any('/{information}/hapus', [DeleteInformationAdminController::class, 'action'])->name(config('route.admin.information.delete-action'));
         Route::any('/{information}/nomor', [NumberInformationAdminController::class, 'toggle'])->name(config('route.admin.information.number.toggle'));
         Route::any('/{information}/{number}/nomor', [NumberInformationAdminController::class, 'change'])->name(config('route.admin.information.number.change'));
-    });
-
-    // Event
-    Route::prefix('agenda')->group(function (): void {
-        Route::get('/', [HomeEventAdminController::class, 'view'])->name(config('route.admin.event.home'));
-        Route::get('/tambah', [AddEventAdminController::class, 'view'])->name(config('route.admin.event.add'));
-        Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
-        Route::get('/{event}/ubah', [EditEventAdminController::class, 'view'])->name(config('route.admin.event.edit'));
-        Route::put('/{event}/ubah', [EditEventAdminController::class, 'action'])->name(config('route.admin.event.edit-action'));
-        Route::any('/{event}/hapus', [DeleteEventAdminController::class, 'action'])->name(config('route.admin.event.delete-action'));
     });
 
     // PTK

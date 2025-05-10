@@ -40,10 +40,6 @@
                     href="{{ route(config('route.admin.information.home')) }}" text="Informasi" />
             </li>
             <li>
-                <x-links.navbar active="{{ request()->routeIs(config('route.admin.event.base')) }}"
-                    href="{{ route(config('route.admin.event.home')) }}" text="Agenda" />
-            </li>
-            <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.ptk.base')) }}"
                     href="{{ route(config('route.admin.ptk.home')) }}" text="PTK" />
             </li>
