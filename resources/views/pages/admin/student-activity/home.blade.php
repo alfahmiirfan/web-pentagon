@@ -41,7 +41,7 @@
             </template>
         </x-inputs.select>
         <x-inputs.search x-model.debounce.500ms="search" />
-        <x-links.add href="" />
+        <x-links.add href="{{ route(config('route.admin.student-activity.add')) }}" />
     </div>
 
     @error('error')

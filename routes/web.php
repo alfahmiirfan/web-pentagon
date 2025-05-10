@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
+use App\Http\Controllers\Web\Admin\StudentActivity\AddStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\DeleteAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Information\NumberInformationAdminController;
@@ -79,6 +80,8 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
     // Student Activity
     Route::prefix('kesiswaan')->group(function (): void {
         Route::get('/', [HomeStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.home'));
+        Route::get('/tambah', [AddStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.add'));
+        Route::post('/tambah', [AddStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.add-action'));
     });
 
     // Facility

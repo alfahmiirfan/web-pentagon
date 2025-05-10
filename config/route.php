@@ -55,6 +55,8 @@ return [
             'base' => 'admin.student-activity.*',
 
             'home' => 'admin.student-activity.home',
+            'add' => 'admin.student-activity.add',
+            'add-action' => 'admin.student-activity.add.action',
         ],
 
         'facility' => [
