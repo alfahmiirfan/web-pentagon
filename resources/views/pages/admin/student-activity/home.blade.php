@@ -86,7 +86,9 @@
                                         <p class="border-b text-cstm-blue-900">
                                             Pilih Aksi
                                         </p>
-                                        <a x-bind:href="">
+                                        <a
+                                            x-bind:href="`{{ route(config('route.admin.student-activity.edit'), ['studentActivity' => '###']) }}`
+                                            .replace('###', item.id)">
                                             Edit
                                         </a>
                                         <button x-on:click="selectedID = item.id; deleteModal = true; inFocus = false"

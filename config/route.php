@@ -57,6 +57,8 @@ return [
             'home' => 'admin.student-activity.home',
             'add' => 'admin.student-activity.add',
             'add-action' => 'admin.student-activity.add.action',
+            'edit' => 'admin.student-activity.edit',
+            'edit-action' => 'admin.student-activity.edit.action',
         ],
 
         'facility' => [
