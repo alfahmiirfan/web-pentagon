@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\StudentActivity\DeleteStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\EditStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\AddStudentActivityAdminController;
@@ -85,6 +86,7 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::post('/tambah', [AddStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.add-action'));
         Route::get('/{studentActivity}/ubah', [EditStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.edit'));
         Route::put('/{studentActivity}/ubah', [EditStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.edit-action'));
+        Route::any('/{studentActivity}/hapus', [DeleteStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.delete-action'));
     });
 
     // Facility

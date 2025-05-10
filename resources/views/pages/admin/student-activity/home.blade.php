@@ -115,6 +115,8 @@
     </div>
 
     <x-paginations.default />
-    <x-modals.delete x-bind:href="selectedID ? ``.replace('###', selectedID) : ''" />
+    <x-modals.delete
+        x-bind:href="selectedID ? `{{ route(config('route.admin.student-activity.delete-action'), ['studentActivity' => '###']) }}`
+            .replace('###', selectedID) : ''" />
 
 </x-layouts.admin>

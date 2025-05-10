@@ -59,6 +59,7 @@ return [
             'add-action' => 'admin.student-activity.add.action',
             'edit' => 'admin.student-activity.edit',
             'edit-action' => 'admin.student-activity.edit.action',
+            'delete-action' => 'admin.student-activity.delete.action',
         ],
 
         'facility' => [
