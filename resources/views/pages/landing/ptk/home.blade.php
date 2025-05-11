@@ -40,7 +40,7 @@
             <div class="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
 
                 <template x-for="item in paginatedData">
-                    <div class="flex aspect-[3/4] flex-col overflow-hidden rounded-xl bg-white shadow">
+                    <div class="flex aspect-[10/16] flex-col overflow-hidden rounded-xl bg-white shadow-xl">
                         <div class="flex-1 bg-cover bg-center bg-no-repeat"
                             x-bind:style="`background-image: url('/storage/${item.image}')`">
                         </div>
