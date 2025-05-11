@@ -21,31 +21,26 @@
             </x-labels.default>
         </div>
         <div class="flex gap-3 *:flex-1">
-            <x-labels.default text="Kelas" for="class" required="true">
-                <x-inputs.text name="class" placeholder="Kelas" value="{{ $alumni->class }}" />
-            </x-labels.default>
             <x-labels.default text="Status Saat Ini" for="status" required="true">
                 <x-inputs.text name="status" placeholder="Status Saat Ini" value="{{ $alumni->status }}" />
             </x-labels.default>
-        </div>
-        <div class="flex gap-3 *:flex-1">
             <x-labels.default text="Institusi / Tempat Kerja" for="job_place" required="true">
                 <x-inputs.text name="job_place" placeholder="Institusi / Tempat Kerja"
                     value="{{ $alumni->job_place }}" />
             </x-labels.default>
+        </div>
+        <div class="flex gap-3 *:flex-1">
             <x-labels.default text="Bidang / Program Studi / Posisi" for="position" required="true">
                 <x-inputs.text name="position" placeholder="Bidang / Program Studi / Posisi"
                     value="{{ $alumni->position }}" />
-            </x-labels.default>
-        </div>
-        <div class="flex gap-3 *:flex-1">
-            <x-labels.default text="Domisili Saat Ini" for="address" required="true">
-                <x-inputs.text name="address" placeholder="Domisili Saat Ini" value="{{ $alumni->address }}" />
             </x-labels.default>
             <x-labels.default text="No Telepon" for="phone" required="true">
                 <x-inputs.text name="phone" placeholder="No Telepon" value="{{ $alumni->phone }}" />
             </x-labels.default>
         </div>
+        <x-labels.default text="Domisili Saat Ini" for="address" required="true">
+            <x-inputs.text name="address" placeholder="Domisili Saat Ini" value="{{ $alumni->address }}" />
+        </x-labels.default>
         <x-labels.default text="Kesan Dan Pesan" for="description" required="true">
             <x-inputs.textarea name="description" placeholder="Kesan Dan Pesan" value="{{ $alumni->description }}" />
         </x-labels.default>

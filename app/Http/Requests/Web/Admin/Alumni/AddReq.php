@@ -34,7 +34,6 @@ class AddReq extends FormRequest
             'address' => ['bail', 'required', 'string', 'max:' . Alumni::MAX['address']],
             'status' => ['bail', 'required', 'string', 'max:' . Alumni::MAX['status']],
             'phone' => ['bail', 'required', 'string', 'max:' . Alumni::MAX['phone']],
-            'class' => ['bail', 'required', 'string', 'max:' . Alumni::MAX['class']],
             'name' => ['bail', 'required', 'string', 'max:' . Alumni::MAX['name']],
         ];
     }
@@ -55,7 +54,6 @@ class AddReq extends FormRequest
             'image' => 'foto alumni',
             'phone' => 'no telepon',
             'year' => 'tahun lulus',
-            'class' => 'kelas',
             'name' => 'nama',
         ];
     }
