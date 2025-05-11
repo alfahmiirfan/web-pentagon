@@ -13,10 +13,11 @@
         @method('PUT')
         @csrf
 
-        <x-labels.default text="Nama Kesiswaan" for="name">
+        <x-labels.default text="Nama Kesiswaan" for="name" required="true">
             <x-inputs.text name="name" placeholder="Nama Kesiswaan" value="{{ $studentActivity->name }}" />
         </x-labels.default>
-        <x-inputs.image label="Foto Kesiswaan" name="image" value="/storage/{{ $studentActivity->image }}" />
+        <x-inputs.image label="Foto Kesiswaan" name="image" value="/storage/{{ $studentActivity->image }}"
+            required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">

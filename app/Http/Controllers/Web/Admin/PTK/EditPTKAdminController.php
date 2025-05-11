@@ -36,6 +36,8 @@ class EditPTKAdminController extends Controller
             'description' => $request->input('description'),
             'position' => $request->input('position'),
             'name' => $request->input('name'),
+            'job' => $request->input('job'),
+            'nip' => $request->input('nip'),
         ];
 
         $image = null;

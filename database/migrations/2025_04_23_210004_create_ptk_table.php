@@ -14,7 +14,9 @@ return new class extends Migration {
             $table->uuid('id')->primary();
 
             $table->string('name', 255)->nullable();
+            $table->string('nip', 18)->nullable();
             $table->string('position', 255)->nullable();
+            $table->text('job')->nullable();
             $table->text('description')->nullable();
             $table->text('image')->nullable();
 
