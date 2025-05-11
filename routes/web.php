@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Web\Admin\Student\AddStudentAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\DeleteStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\EditStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
@@ -23,8 +22,10 @@ use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Student\EditStudentAdminController;
 use App\Http\Controllers\Web\Admin\Student\HomeStudentAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\DeleteAlumniAdminController;
+use App\Http\Controllers\Web\Admin\Student\AddStudentAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
@@ -128,6 +129,8 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::get('/', [HomeStudentAdminController::class, 'view'])->name(config('route.admin.student.home'));
         Route::get('/tambah', [AddStudentAdminController::class, 'view'])->name(config('route.admin.student.add'));
         Route::post('/tambah', [AddStudentAdminController::class, 'action'])->name(config('route.admin.student.add-action'));
+        Route::get('/{student}/ubah', [EditStudentAdminController::class, 'view'])->name(config('route.admin.student.edit'));
+        Route::put('/{student}/ubah', [EditStudentAdminController::class, 'action'])->name(config('route.admin.student.edit-action'));
     });
 
     // Achievement

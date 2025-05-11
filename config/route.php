@@ -106,6 +106,8 @@ return [
             'home' => 'admin.student.home',
             'add' => 'admin.student.add',
             'add-action' => 'admin.student.add.action',
+            'edit' => 'admin.student.edit',
+            'edit-action' => 'admin.student.edit.action',
         ],
 
         'achievement' => [
