@@ -21,6 +21,21 @@
         </div>
     </div>
 
+    <div class="flex flex-col">
+        <div class="flex w-full flex-1 items-center justify-center">
+            <div class="flex w-full max-w-screen-xl flex-col items-start justify-center gap-3 p-5 2xl:max-w-screen-2xl">
+                <p title="Budianto Sp.d" class="text-xl font-bold text-cstm-blue-900 md:text-3xl">
+                    Budianto Sp.d
+                </p>
+                <p title="Kepala Sekolah" class="text-gray-500 max-md:text-sm">
+                    Kepala Sekolah
+                </p>
+                <img src="/images/landing/students.jpg" alt=""
+                    class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg">
+            </div>
+        </div>
+    </div>
+
     <div id="jelajahi" class="flex justify-center" x-data="{
         data: {{ json_encode($informations) }},
         currentPage: 1,
@@ -49,9 +64,9 @@
                     <h2 x-bind:title="item.name" x-text="item.name"
                         class="line-clamp-1 w-full text-2xl font-bold md:text-3xl">
                     </h2>
-                    <p x-bind:title="item.description" x-text="item.description"
+                    <div x-html="item.description"
                         class="line-clamp-2 w-full text-lg font-semibold text-gray-500 md:text-xl">
-                    </p>
+                    </div>
                     <div class="my-5 flex w-full justify-end gap-3 md:gap-4">
                         <button title="Kiri" x-on:click.debounce="currentPage = currentPage > 1 ? currentPage - 1 : 1"
                             x-bind:class="(currentPage === 1 ? ' bg-cstm-green-900/75' : ' bg-cstm-green-900') +
