@@ -22,6 +22,7 @@ use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Student\HomeStudentAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\DeleteAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
@@ -119,6 +120,11 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::get('/{ptk}/ubah', [EditPTKAdminController::class, 'view'])->name(config('route.admin.ptk.edit'));
         Route::put('/{ptk}/ubah', [EditPTKAdminController::class, 'action'])->name(config('route.admin.ptk.edit-action'));
         Route::any('/{ptk}/hapus', [DeletePTKAdminController::class, 'action'])->name(config('route.admin.ptk.delete-action'));
+    });
+
+    // Student
+    Route::prefix('siswa')->group(function (): void {
+        Route::get('/', [HomeStudentAdminController::class, 'view'])->name(config('route.admin.student.home'));
     });
 
     // Achievement

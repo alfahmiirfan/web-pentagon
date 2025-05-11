@@ -48,6 +48,10 @@
                     href="{{ route(config('route.admin.ptk.home')) }}" text="PTK" />
             </li>
             <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.student.base')) }}"
+                    href="{{ route(config('route.admin.student.home')) }}" text="Siswa" />
+            </li>
+            <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.achievement.base')) }}"
                     href="{{ route(config('route.admin.achievement.home')) }}" text="Prestasi" />
             </li>

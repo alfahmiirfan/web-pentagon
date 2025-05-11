@@ -100,6 +100,12 @@ return [
             'delete-action' => 'admin.ptk.delete.action',
         ],
 
+        'student' => [
+            'base' => 'admin.student.*',
+
+            'home' => 'admin.student.home',
+        ],
+
         'achievement' => [
             'base' => 'admin.achievement.*',
 
