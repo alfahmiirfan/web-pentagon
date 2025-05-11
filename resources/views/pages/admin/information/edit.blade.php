@@ -19,7 +19,7 @@
             <x-inputs.text name="name" placeholder="Judul Informasi" value="{{ $information->name }}" />
         </x-labels.default>
         <x-labels.default text="Deskripsi" for="description" required="true">
-            <x-inputs.textarea name="description" placeholder="Deskripsi" value="{{ $information->description }}" />
+            <x-inputs.textarea name="description" placeholder="Deskripsi" value="{!! $information->description !!}" />
         </x-labels.default>
         <x-inputs.image label="Foto Informasi" name="image" value="/storage/{{ $information->image }}"
             required="true" />
@@ -36,5 +36,17 @@
             <x-buttons.submit text="Ubah" />
         </div>
     </form>
+
+    @push('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.2.0/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea#description',
+                menubar: false,
+                plugins: 'code table lists link',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | link | table',
+            });
+        </script>
+    @endpush
 
 </x-layouts.admin>
