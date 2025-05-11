@@ -20,6 +20,7 @@ use App\Http\Controllers\Web\Admin\Activity\EditActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Student\DeleteStudentAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Student\EditStudentAdminController;
@@ -131,6 +132,7 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::post('/tambah', [AddStudentAdminController::class, 'action'])->name(config('route.admin.student.add-action'));
         Route::get('/{student}/ubah', [EditStudentAdminController::class, 'view'])->name(config('route.admin.student.edit'));
         Route::put('/{student}/ubah', [EditStudentAdminController::class, 'action'])->name(config('route.admin.student.edit-action'));
+        Route::any('/{student}/hapus', [DeleteStudentAdminController::class, 'action'])->name(config('route.admin.student.delete-action'));
     });
 
     // Achievement

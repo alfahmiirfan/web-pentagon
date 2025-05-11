@@ -108,6 +108,7 @@ return [
             'add-action' => 'admin.student.add.action',
             'edit' => 'admin.student.edit',
             'edit-action' => 'admin.student.edit.action',
+            'delete-action' => 'admin.student.delete.action',
         ],
 
         'achievement' => [
