@@ -64,7 +64,7 @@ class Student extends Model
     | -----------------------------------------------------------------
     */
 
-    public function GetGenderValues(): array
+    public static function GetGenderValues(): array
     {
         return [
             self::GENDER_FEMALE,

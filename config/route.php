@@ -104,6 +104,8 @@ return [
             'base' => 'admin.student.*',
 
             'home' => 'admin.student.home',
+            'add' => 'admin.student.add',
+            'add-action' => 'admin.student.add.action',
         ],
 
         'achievement' => [

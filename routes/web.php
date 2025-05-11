@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Student\AddStudentAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\DeleteStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\EditStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
@@ -125,6 +126,8 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
     // Student
     Route::prefix('siswa')->group(function (): void {
         Route::get('/', [HomeStudentAdminController::class, 'view'])->name(config('route.admin.student.home'));
+        Route::get('/tambah', [AddStudentAdminController::class, 'view'])->name(config('route.admin.student.add'));
+        Route::post('/tambah', [AddStudentAdminController::class, 'action'])->name(config('route.admin.student.add-action'));
     });
 
     // Achievement
