@@ -20,12 +20,11 @@ class Student extends Model
     protected $fillable = [
         'birth_place',
         'birth_date',
+        'generation',
         'address',
         'gender',
         'phone',
         'email',
-        'dream',
-        'motto',
         'image',
         'name',
         'nisn',
@@ -41,11 +40,10 @@ class Student extends Model
 
     public const MAX = [
         'birth_place' => 255,
+        'generation' => 255,
         'address' => 255,
         'image' => 65535,
-        'dream' => 255,
         'email' => 255,
-        'motto' => 255,
         'phone' => 25,
         'name' => 255,
         'nisn' => 10,

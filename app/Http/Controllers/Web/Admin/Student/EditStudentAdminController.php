@@ -35,11 +35,10 @@ class EditStudentAdminController extends Controller
         $data = [
             'birth_place' => $request->input('birth_place'),
             'birth_date' => $request->input('birth_date'),
+            'generation' => $request->input('generation'),
             'address' => $request->input('address'),
             'gender' => $request->input('gender'),
-            'dream' => $request->input('dream'),
             'email' => $request->input('email'),
-            'motto' => $request->input('motto'),
             'phone' => $request->input('phone'),
             'name' => $request->input('name'),
             'nisn' => $request->input('nisn'),
