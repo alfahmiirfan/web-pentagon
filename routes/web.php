@@ -38,6 +38,7 @@ use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
 use App\Http\Controllers\Web\Landing\GalleryLandingController;
 use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
+use App\Http\Controllers\Web\Landing\StudentLandingController;
 use App\Http\Controllers\Web\Authentication\LogoutController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\AlumniLandingController;
@@ -51,6 +52,8 @@ Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.land
 Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
 Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk-home'));
 Route::get('ptk/{ptk}/lihat', [PTKLandingController::class, 'detail'])->name(config('route.landing.about-ptk-detail'));
+Route::get('siswa', [StudentLandingController::class, 'view'])->name(config('route.landing.about-student-home'));
+Route::get('siswa/{student}/lihat', [StudentLandingController::class, 'detail'])->name(config('route.landing.about-student-detail'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
 Route::get('prestasi/{achievement}/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
