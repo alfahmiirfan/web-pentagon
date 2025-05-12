@@ -11,16 +11,22 @@
         class="flex flex-col gap-3">
         @csrf
 
-        <x-labels.default text="Nama" for="name">
+        <x-labels.default text="Nama" for="name" required="true">
             <x-inputs.text name="name" placeholder="Nama" />
         </x-labels.default>
-        <x-labels.default text="Jabatan" for="position">
+        <x-labels.default text="NIP" for="nip">
+            <x-inputs.text name="nip" placeholder="NIP" />
+        </x-labels.default>
+        <x-labels.default text="Jabatan" for="position" required="true">
             <x-inputs.text name="position" placeholder="Jabatan" />
         </x-labels.default>
-        <x-labels.default text="Deskripsi" for="description">
+        <x-labels.default text="Tugas" for="job" required="true">
+            <x-inputs.textarea name="job" placeholder="Tugas" />
+        </x-labels.default>
+        <x-labels.default text="Deskripsi" for="description" required="true">
             <x-inputs.textarea name="description" placeholder="Deskripsi" />
         </x-labels.default>
-        <x-inputs.image label="Foto PTK" name="image" />
+        <x-inputs.image label="Foto PTK" name="image" required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">

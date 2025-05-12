@@ -10,9 +10,34 @@
             <p title="{{ $ptk->position }}" class="line-clamp-1 text-gray-500">
                 {{ $ptk->position }}
             </p>
-            <div class="aspect-[2/1] w-full rounded-lg border bg-cover bg-center bg-no-repeat"
-                style="background-image: url('/storage/{{ $ptk->image }}')">
+            <div class="flex aspect-[2/1] w-full items-center justify-center rounded-lg border-2 p-1.5">
+                <img src="/storage/{{ $ptk->image }}" alt=""
+                    class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg">
             </div>
+            <table>
+                <tr>
+                    <td class="font-bold text-cstm-blue-900">
+                        NIP
+                    </td>
+                    <td class="px-2.5 font-bold text-cstm-blue-900">
+                        :
+                    </td>
+                    <td class="w-full">
+                        {{ $ptk->nip }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-bold text-cstm-blue-900">
+                        Tugas
+                    </td>
+                    <td class="px-2.5 font-bold text-cstm-blue-900">
+                        :
+                    </td>
+                    <td class="w-full">
+                        {{ $ptk->job }}
+                    </td>
+                </tr>
+            </table>
             <p>
                 {!! nl2br($ptk->description) !!}
             </p>

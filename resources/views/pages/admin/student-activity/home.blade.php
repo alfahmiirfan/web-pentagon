@@ -1,4 +1,4 @@
-<x-layouts.admin title="Agenda | Admin | {{ config('app.name') }}" x-data="{
+<x-layouts.admin title="Kegiatan | Admin | {{ config('app.name') }}" x-data="{
     data: {{ json_encode($data) }},
     perpageData: [20, 15, 10, 5],
     currentPage: 1,
@@ -8,11 +8,9 @@
     deleteModal: false,
     selectedID: null,
     get filteredData() {
-        return this.data.filter(item => (
-            this.search === '' ||
-            new Date(item.date).toDateString().toLowerCase().includes(this.search.toLowerCase()) ||
-            item.name.toLowerCase().includes(this.search.toLowerCase())
-        ));
+        return this.data.filter(item =>
+            (this.search === '' || item.name.toLowerCase().includes(this.search.toLowerCase()))
+        );
     },
     get paginatedData() {
         const start = (this.currentPage - 1) * this.perpage;
@@ -33,7 +31,7 @@
 }">
 
     <h4 class="mb-6 text-xl font-bold text-cstm-blue-900">
-        Agenda
+        Kegiatan Kesiswaan
     </h4>
 
     <div class="flex gap-3">
@@ -43,7 +41,7 @@
             </template>
         </x-inputs.select>
         <x-inputs.search x-model.debounce.500ms="search" />
-        <x-links.add href="{{ route(config('route.admin.event.add')) }}" />
+        <x-links.add href="{{ route(config('route.admin.student-activity.add')) }}" />
     </div>
 
     @error('error')
@@ -58,8 +56,7 @@
             <thead>
                 <tr class="text-white *:bg-cstm-green-900 *:p-1.5 first:*:rounded-tl-lg last:*:rounded-tr-lg">
                     <th>No</th>
-                    <th>Tanggal</th>
-                    <th>Judul Agenda</th>
+                    <th>Kesiswaan</th>
                     <th>Gambar</th>
                     <th>Aksi</th>
                 </tr>
@@ -69,7 +66,6 @@
                 <template x-for="(item, index) in paginatedData">
                     <tr class="border-b *:p-1.5 last:border-none">
                         <td class="text-center" x-text="(currentPage - 1) * perpage + (index + 1)"></td>
-                        <td class="text-center" x-text="new Date(item.date).toDateString()"></td>
                         <td x-text="item.name"></td>
                         <td>
                             <div class="flex items-center justify-center">
@@ -91,8 +87,8 @@
                                             Pilih Aksi
                                         </p>
                                         <a
-                                            x-bind:href="`{{ route(config('route.admin.event.edit'), ['event' => '###']) }}`.replace(
-                                                '###', item.id)">
+                                            x-bind:href="`{{ route(config('route.admin.student-activity.edit'), ['studentActivity' => '###']) }}`
+                                            .replace('###', item.id)">
                                             Edit
                                         </a>
                                         <button x-on:click="selectedID = item.id; deleteModal = true; inFocus = false"
@@ -120,7 +116,7 @@
 
     <x-paginations.default />
     <x-modals.delete
-        x-bind:href="selectedID ? `{{ route(config('route.admin.event.delete-action'), ['event' => '###']) }}`.replace('###',
-            selectedID) : ''" />
+        x-bind:href="selectedID ? `{{ route(config('route.admin.student-activity.delete-action'), ['studentActivity' => '###']) }}`
+            .replace('###', selectedID) : ''" />
 
 </x-layouts.admin>

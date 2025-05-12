@@ -30,6 +30,8 @@ class EditReq extends FormRequest
             'image' => ['bail', 'nullable', 'file', 'image', 'max:' . PTK::IMAGE_MAX_SIZE],
             'position' => ['bail', 'required', 'string', 'max:' . PTK::MAX['position']],
             'name' => ['bail', 'required', 'string', 'max:' . PTK::MAX['name']],
+            'job' => ['bail', 'required', 'string', 'max:' . PTK::MAX['job']],
+            'nip' => ['bail', 'nullable', 'string', 'max:' . PTK::MAX['nip']],
         ];
     }
 
@@ -45,6 +47,8 @@ class EditReq extends FormRequest
             'position' => 'jabatan',
             'image' => 'foto ptk',
             'name' => 'nama',
+            'job' => 'tugas',
+            'nip' => 'nip',
         ];
     }
 }

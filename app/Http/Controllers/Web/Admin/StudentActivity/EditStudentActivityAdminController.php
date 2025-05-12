@@ -1,40 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Web\Admin\Event;
+namespace App\Http\Controllers\Web\Admin\StudentActivity;
 
-use App\Http\Requests\Web\Admin\Event\EditReq;
+use App\Http\Requests\Web\Admin\StudentActivity\EditReq;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
-use App\Models\Event;
+use App\Models\StudentActivity;
 
-class EditEventAdminController extends Controller
+class EditStudentActivityAdminController extends Controller
 {
     /**
-     * @param \App\Models\Event $event
+     * @param \App\Models\StudentActivity $studentActivity
      * 
      * @return View
      */
-    public function view(Event $event): View
+    public function view(StudentActivity $studentActivity): View
     {
-        return view('pages.admin.event.edit', compact([
-            'event'
+        return view('pages.admin.student-activity.edit', compact([
+            'studentActivity'
         ]));
     }
 
     /**
-     * @param \App\Http\Requests\Web\Admin\Event\EditReq $request
-     * @param \App\Models\Event $event
+     * @param \App\Http\Requests\Web\Admin\StudentActivity\EditReq $request
+     * @param \App\Models\StudentActivity $studentActivity
      * 
      * @return RedirectResponse
      */
-    public function action(EditReq $request, Event $event): RedirectResponse
+    public function action(EditReq $request, StudentActivity $studentActivity): RedirectResponse
     {
         $data = [
-            'description' => $request->input('description'),
-            'date' => $request->input('date'),
             'name' => $request->input('name'),
         ];
 
@@ -46,13 +44,13 @@ class EditEventAdminController extends Controller
             $oldImage = null;
 
             if ($request->hasFile('image')) {
-                $image = $request->file('image')->storePublicly(Event::IMAGE_DIR);
+                $image = $request->file('image')->storePublicly(StudentActivity::IMAGE_DIR);
 
-                $oldImage = $event->image;
+                $oldImage = $studentActivity->image;
                 $data['image'] = $image;
             }
 
-            $event->update($data);
+            $studentActivity->update($data);
 
             if ($oldImage) {
                 if (Storage::exists($oldImage)) {
@@ -63,8 +61,8 @@ class EditEventAdminController extends Controller
             DB::commit();
 
             return redirect()
-                ->route(config('route.admin.event.home'))
-                ->with('success', 'Berhasil mengubah agenda');
+                ->route(config('route.admin.student-activity.home'))
+                ->with('success', 'Berhasil mengubah kesiswaan');
         } catch (\Throwable $th) {
             DB::rollBack();
 

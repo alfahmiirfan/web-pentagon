@@ -11,16 +11,16 @@
         class="flex flex-col gap-3">
         @csrf
 
-        <x-labels.default text="Tanggal" for="date">
+        <x-labels.default text="Tanggal" for="date" required="true">
             <x-inputs.date name="date" />
         </x-labels.default>
-        <x-labels.default text="Judul Informasi" for="name">
+        <x-labels.default text="Judul Informasi" for="name" required="true">
             <x-inputs.text name="name" placeholder="Judul Informasi" />
         </x-labels.default>
-        <x-labels.default text="Deskripsi" for="description">
+        <x-labels.default text="Deskripsi" for="description" required="true">
             <x-inputs.textarea name="description" placeholder="Deskripsi" />
         </x-labels.default>
-        <x-inputs.image label="Foto Informasi" name="image" />
+        <x-inputs.image label="Foto Informasi" name="image" required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
@@ -34,5 +34,17 @@
             <x-buttons.submit text="Tambah" />
         </div>
     </form>
+
+    @push('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.2.0/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea#description',
+                menubar: false,
+                plugins: 'code table lists link',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | link | table',
+            });
+        </script>
+    @endpush
 
 </x-layouts.admin>

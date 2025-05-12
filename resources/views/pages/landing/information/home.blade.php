@@ -53,8 +53,9 @@
                 <template x-for="item in paginatedData">
                     <a x-bind:href="`{{ route(config('route.landing.information-detail'), ['information' => '###']) }}`.replace('###',
                         item.id)"
-                        target="_blank" class="flex items-center justify-start gap-5 rounded-md bg-cstm-green-50 p-5">
-                        <div class="aspect-square h-full rounded-md bg-pink-300 bg-cover bg-center bg-no-repeat"
+                        target="_blank"
+                        class="flex items-center justify-start gap-5 rounded-md bg-cstm-green-50 p-5 transition-all hover:border-2">
+                        <div class="aspect-square h-28 rounded-md bg-pink-300 bg-cover bg-center bg-no-repeat"
                             x-bind:style="`background-image: url('/storage/${item.image}')`">
                         </div>
                         <div class="flex flex-col gap-2.5">
@@ -62,9 +63,8 @@
                             </p>
                             <p x-bind:title="item.name" x-text="item.name" class="line-clamp-1 text-xl font-bold">
                             </p>
-                            <p x-bind:title="item.description" x-text="item.description"
-                                class="line-clamp-1 text-sm sm:text-base">
-                            </p>
+                            <div x-html="item.description" class="line-clamp-1 text-sm sm:text-base">
+                            </div>
                         </div>
                     </a>
                 </template>

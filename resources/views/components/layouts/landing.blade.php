@@ -54,6 +54,14 @@
                                 ])>
                                 PTK
                             </a>
+                            <a title="Siswa" href="{{ route(config('route.landing.about-student-home')) }}"
+                                @class([
+                                    'text-cstm-blue-900 font-semibold' => request()->routeIs(
+                                        config('route.landing.about-student')),
+                                    'hover:text-cstm-blue-900',
+                                ])>
+                                Siswa
+                            </a>
                         </div>
                     </li>
                     <li title="Program">
@@ -148,6 +156,14 @@
                             'hover:text-cstm-blue-900',
                         ])>
                         PTK
+                    </a>
+                    <a title="Siswa" href="{{ route(config('route.landing.about-student-home')) }}"
+                        @class([
+                            'text-cstm-blue-900 font-semibold' => request()->routeIs(
+                                config('route.landing.about-student')),
+                            'hover:text-cstm-blue-900',
+                        ])>
+                        Siswa
                     </a>
                 </div>
             </li>

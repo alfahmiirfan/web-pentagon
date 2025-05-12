@@ -31,6 +31,8 @@ class AddPTKAdminController extends Controller
             'description' => $descriptionReq,
             'position' => $positionReq,
             'name' => $nameReq,
+            'job' => $jobReq,
+            'nip' => $nipReq,
         ] = $request;
 
         $image = null;
@@ -47,6 +49,8 @@ class AddPTKAdminController extends Controller
                 'position' => $positionReq,
                 'name' => $nameReq,
                 'image' => $image,
+                'job' => $jobReq,
+                'nip' => $nipReq,
             ]);
 
             DB::commit();

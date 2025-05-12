@@ -11,16 +11,16 @@
         class="flex flex-col gap-3">
         @csrf
 
-        <x-labels.default text="Tanggal" for="date">
+        <x-labels.default text="Tanggal" for="date" required="true">
             <x-inputs.date name="date" />
         </x-labels.default>
-        <x-labels.default text="Judul Prestasi" for="name">
+        <x-labels.default text="Judul Prestasi" for="name" required="true">
             <x-inputs.text name="name" placeholder="Judul Prestasi" />
         </x-labels.default>
-        <x-labels.default text="Deskripsi" for="description">
+        <x-labels.default text="Deskripsi" for="description" required="true">
             <x-inputs.textarea name="description" placeholder="Deskripsi" />
         </x-labels.default>
-        <x-inputs.image label="Foto Prestasi" name="image" />
+        <x-inputs.image label="Foto Prestasi" name="image" required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">

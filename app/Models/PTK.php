@@ -22,6 +22,8 @@ class PTK extends Model
         'position',
         'image',
         'name',
+        'job',
+        'nip',
     ];
 
     protected $hidden = [];
@@ -36,7 +38,9 @@ class PTK extends Model
         'description' => 65535,
         'position' => 255,
         'image' => 65535,
+        'job' => 65535,
         'name' => 255,
+        'nip' => 18,
     ];
 
     public const IMAGE_DIR = '/images/ptk';

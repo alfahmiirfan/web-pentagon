@@ -38,7 +38,6 @@ class EditAlumniAdminController extends Controller
             'position' => $request->input('position'),
             'address' => $request->input('address'),
             'status' => $request->input('status'),
-            'class' => $request->input('class'),
             'phone' => $request->input('phone'),
             'name' => $request->input('name'),
             'year' => $request->input('year'),

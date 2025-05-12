@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Web\Admin\Event;
+namespace App\Http\Controllers\Web\Admin\Student;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Models\Event;
+use App\Models\Student;
 
-class DeleteEventAdminController extends Controller
+class DeleteStudentAdminController extends Controller
 {
     /**
-     * @param \App\Models\Event $event
+     * @param \App\Models\Student $student
      * 
      * @return RedirectResponse
      */
-    public function action(Event $event): RedirectResponse
+    public function action(Student $student): RedirectResponse
     {
         DB::beginTransaction();
 
         try {
-            $image = $event->image;
+            $image = $student->image;
 
-            $event->delete();
+            $student->delete();
 
             if ($image) {
                 if (Storage::exists($image)) {
@@ -33,8 +33,8 @@ class DeleteEventAdminController extends Controller
             DB::commit();
 
             return redirect()
-                ->route(config('route.admin.event.home'))
-                ->with('success', 'Berhasil menghapus agenda');
+                ->route(config('route.admin.student.home'))
+                ->with('success', 'Berhasil menghapus siswa');
         } catch (\Throwable $th) {
             DB::rollBack();
 

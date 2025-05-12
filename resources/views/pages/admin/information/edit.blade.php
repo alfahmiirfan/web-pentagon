@@ -12,16 +12,17 @@
         @method('PUT')
         @csrf
 
-        <x-labels.default text="Tanggal" for="date">
+        <x-labels.default text="Tanggal" for="date" required="true">
             <x-inputs.date name="date" value="{{ $information->date }}" />
         </x-labels.default>
-        <x-labels.default text="Judul Informasi" for="name">
+        <x-labels.default text="Judul Informasi" for="name" required="true">
             <x-inputs.text name="name" placeholder="Judul Informasi" value="{{ $information->name }}" />
         </x-labels.default>
-        <x-labels.default text="Deskripsi" for="description">
-            <x-inputs.textarea name="description" placeholder="Deskripsi" value="{{ $information->description }}" />
+        <x-labels.default text="Deskripsi" for="description" required="true">
+            <x-inputs.textarea name="description" placeholder="Deskripsi" value="{!! $information->description !!}" />
         </x-labels.default>
-        <x-inputs.image label="Foto Informasi" name="image" value="/storage/{{ $information->image }}" />
+        <x-inputs.image label="Foto Informasi" name="image" value="/storage/{{ $information->image }}"
+            required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">
@@ -35,5 +36,17 @@
             <x-buttons.submit text="Ubah" />
         </div>
     </form>
+
+    @push('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.2.0/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea#description',
+                menubar: false,
+                plugins: 'code table lists link',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | link | table',
+            });
+        </script>
+    @endpush
 
 </x-layouts.admin>

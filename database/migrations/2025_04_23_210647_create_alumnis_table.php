@@ -15,7 +15,6 @@ return new class extends Migration {
 
             $table->string('name', 255)->nullable();
             $table->year('year')->nullable();
-            $table->string('class', 255)->nullable();
             $table->string('status', 255)->nullable();
             $table->string('job_place', 255)->nullable();
             $table->string('position', 255)->nullable();

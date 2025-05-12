@@ -12,16 +12,22 @@
         @method('PUT')
         @csrf
 
-        <x-labels.default text="Nama" for="name">
+        <x-labels.default text="Nama" for="name" required="true">
             <x-inputs.text name="name" placeholder="Nama" value="{{ $ptk->name }}" />
         </x-labels.default>
-        <x-labels.default text="Jabatan" for="position">
+        <x-labels.default text="NIP" for="nip">
+            <x-inputs.text name="nip" placeholder="NIP" value="{{ $ptk->nip }}" />
+        </x-labels.default>
+        <x-labels.default text="Jabatan" for="position" required="true">
             <x-inputs.text name="position" placeholder="Jabatan" value="{{ $ptk->position }}" />
         </x-labels.default>
-        <x-labels.default text="Deskripsi" for="description">
+        <x-labels.default text="Tugas" for="job" required="true">
+            <x-inputs.textarea name="job" placeholder="Tugas" value="{{ $ptk->job }}" />
+        </x-labels.default>
+        <x-labels.default text="Deskripsi" for="description" required="true">
             <x-inputs.textarea name="description" placeholder="Deskripsi" value="{{ $ptk->description }}" />
         </x-labels.default>
-        <x-inputs.image label="Foto PTK" name="image" value="/storage/{{ $ptk->image }}" />
+        <x-inputs.image label="Foto PTK" name="image" value="/storage/{{ $ptk->image }}" required="true" />
 
         @error('error')
             <p class="flex items-center justify-start gap-1 text-sm italic text-red-500">

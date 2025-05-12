@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Web\Admin\Event;
+namespace App\Http\Requests\Web\Admin\StudentActivity;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Traits\ErrorMessageValidation;
-use App\Models\Event;
+use App\Models\StudentActivity;
 
-class EditReq extends FormRequest
+class AddReq extends FormRequest
 {
     use ErrorMessageValidation;
 
@@ -26,10 +26,8 @@ class EditReq extends FormRequest
     public function rules(): array
     {
         return [
-            'description' => ['bail', 'required', 'string', 'max:' . Event::MAX['description']],
-            'image' => ['bail', 'nullable', 'file', 'image', 'max:' . Event::IMAGE_MAX_SIZE],
-            'name' => ['bail', 'required', 'string', 'max:' . Event::MAX['name']],
-            'date' => ['bail', 'required', 'date'],
+            'image' => ['bail', 'required', 'file', 'image', 'max:' . StudentActivity::IMAGE_MAX_SIZE],
+            'name' => ['bail', 'required', 'string', 'max:' . StudentActivity::MAX['name']],
         ];
     }
 
@@ -41,10 +39,8 @@ class EditReq extends FormRequest
     public function attributes(): array
     {
         return [
-            'description' => 'deskripsi',
-            'image' => 'foto agenda',
-            'name' => 'judul agenda',
-            'date' => 'tanggal',
+            'image' => 'foto kesiswaan',
+            'name' => 'nama kesiswaan',
         ];
     }
 }

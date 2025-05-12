@@ -32,6 +32,10 @@
                     href="{{ route(config('route.admin.activity.home')) }}" text="Kegiatan Asrama" />
             </li>
             <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.student-activity.base')) }}"
+                    href="{{ route(config('route.admin.student-activity.home')) }}" text="Kesiswaan" />
+            </li>
+            <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.facility.base')) }}"
                     href="{{ route(config('route.admin.facility.home')) }}" text="Fasilitas" />
             </li>
@@ -40,12 +44,12 @@
                     href="{{ route(config('route.admin.information.home')) }}" text="Informasi" />
             </li>
             <li>
-                <x-links.navbar active="{{ request()->routeIs(config('route.admin.event.base')) }}"
-                    href="{{ route(config('route.admin.event.home')) }}" text="Agenda" />
-            </li>
-            <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.ptk.base')) }}"
                     href="{{ route(config('route.admin.ptk.home')) }}" text="PTK" />
+            </li>
+            <li>
+                <x-links.navbar active="{{ request()->routeIs(config('route.admin.student.base')) }}"
+                    href="{{ route(config('route.admin.student.home')) }}" text="Siswa" />
             </li>
             <li>
                 <x-links.navbar active="{{ request()->routeIs(config('route.admin.achievement.base')) }}"

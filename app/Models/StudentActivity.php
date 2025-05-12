@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class StudentActivity extends Model
 {
     use HasUuids;
 
@@ -15,12 +15,10 @@ class Event extends Model
     | -----------------------------------------------------------------
     */
 
-    protected $table = 'events';
+    protected $table = 'student_activities';
 
     protected $fillable = [
-        'description',
         'image',
-        'date',
         'name',
     ];
 
@@ -33,11 +31,10 @@ class Event extends Model
     */
 
     public const MAX = [
-        'description' => 65535,
         'image' => 65535,
         'name' => 255,
     ];
 
-    public const IMAGE_DIR = '/images/events';
+    public const IMAGE_DIR = '/images/student-activities';
     public const IMAGE_MAX_SIZE = '5000';
 }

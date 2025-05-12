@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\StudentActivity\DeleteStudentActivityAdminController;
+use App\Http\Controllers\Web\Admin\StudentActivity\EditStudentActivityAdminController;
+use App\Http\Controllers\Web\Admin\StudentActivity\HomeStudentActivityAdminController;
+use App\Http\Controllers\Web\Admin\StudentActivity\AddStudentActivityAdminController;
 use App\Http\Controllers\Web\Admin\Achievement\DeleteAchievementAdminController;
 use App\Http\Controllers\Web\Admin\Information\DeleteInformationAdminController;
 use App\Http\Controllers\Web\Admin\Information\NumberInformationAdminController;
@@ -16,24 +20,25 @@ use App\Http\Controllers\Web\Admin\Activity\EditActivityAdminController;
 use App\Http\Controllers\Web\Admin\Activity\HomeActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\EditFacilityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\HomeFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Student\DeleteStudentAdminController;
 use App\Http\Controllers\Web\Admin\Activity\AddActivityAdminController;
 use App\Http\Controllers\Web\Admin\Facility\AddFacilityAdminController;
+use App\Http\Controllers\Web\Admin\Student\EditStudentAdminController;
+use App\Http\Controllers\Web\Admin\Student\HomeStudentAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\DeleteAlumniAdminController;
+use App\Http\Controllers\Web\Admin\Student\AddStudentAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\EditAlumniAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\HomeAlumniAdminController;
-use App\Http\Controllers\Web\Admin\Event\DeleteEventAdminController;
 use App\Http\Controllers\Web\Admin\Alumni\AddAlumniAdminController;
-use App\Http\Controllers\Web\Admin\Event\EditEventAdminController;
-use App\Http\Controllers\Web\Admin\Event\HomeEventAdminController;
 use App\Http\Controllers\Web\Landing\AchievementLandingController;
 use App\Http\Controllers\Web\Landing\InformationLandingController;
-use App\Http\Controllers\Web\Admin\Event\AddEventAdminController;
 use App\Http\Controllers\Web\Admin\PTK\DeletePTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\EditPTKAdminController;
 use App\Http\Controllers\Web\Admin\PTK\HomePTKAdminController;
 use App\Http\Controllers\Web\Landing\GalleryLandingController;
 use App\Http\Controllers\Web\Landing\ProfileLandingController;
 use App\Http\Controllers\Web\Landing\ProgramLandingController;
+use App\Http\Controllers\Web\Landing\StudentLandingController;
 use App\Http\Controllers\Web\Authentication\LogoutController;
 use App\Http\Controllers\Web\Admin\PTK\AddPTKAdminController;
 use App\Http\Controllers\Web\Landing\AlumniLandingController;
@@ -47,6 +52,8 @@ Route::get('/', [HomeLandingController::class, 'view'])->name(config('route.land
 Route::get('profil', [ProfileLandingController::class, 'view'])->name(config('route.landing.about-profile'));
 Route::get('ptk', [PTKLandingController::class, 'view'])->name(config('route.landing.about-ptk-home'));
 Route::get('ptk/{ptk}/lihat', [PTKLandingController::class, 'detail'])->name(config('route.landing.about-ptk-detail'));
+Route::get('siswa', [StudentLandingController::class, 'view'])->name(config('route.landing.about-student-home'));
+Route::get('siswa/{student}/lihat', [StudentLandingController::class, 'detail'])->name(config('route.landing.about-student-detail'));
 Route::get('program', [ProgramLandingController::class, 'view'])->name(config('route.landing.program'));
 Route::get('prestasi', [AchievementLandingController::class, 'view'])->name(config('route.landing.achievement-home'));
 Route::get('prestasi/{achievement}/lihat', [AchievementLandingController::class, 'detail'])->name(config('route.landing.achievement-detail'));
@@ -79,6 +86,16 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::any('/{activity}/hapus', [DeleteActivityAdminController::class, 'action'])->name(config('route.admin.activity.delete-action'));
     });
 
+    // Student Activity
+    Route::prefix('kesiswaan')->group(function (): void {
+        Route::get('/', [HomeStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.home'));
+        Route::get('/tambah', [AddStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.add'));
+        Route::post('/tambah', [AddStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.add-action'));
+        Route::get('/{studentActivity}/ubah', [EditStudentActivityAdminController::class, 'view'])->name(config('route.admin.student-activity.edit'));
+        Route::put('/{studentActivity}/ubah', [EditStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.edit-action'));
+        Route::any('/{studentActivity}/hapus', [DeleteStudentActivityAdminController::class, 'action'])->name(config('route.admin.student-activity.delete-action'));
+    });
+
     // Facility
     Route::prefix('fasilitas')->group(function (): void {
         Route::get('/', [HomeFacilityAdminController::class, 'view'])->name(config('route.admin.facility.home'));
@@ -101,16 +118,6 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::any('/{information}/{number}/nomor', [NumberInformationAdminController::class, 'change'])->name(config('route.admin.information.number.change'));
     });
 
-    // Event
-    Route::prefix('agenda')->group(function (): void {
-        Route::get('/', [HomeEventAdminController::class, 'view'])->name(config('route.admin.event.home'));
-        Route::get('/tambah', [AddEventAdminController::class, 'view'])->name(config('route.admin.event.add'));
-        Route::post('/tambah', [AddEventAdminController::class, 'action'])->name(config('route.admin.event.add-action'));
-        Route::get('/{event}/ubah', [EditEventAdminController::class, 'view'])->name(config('route.admin.event.edit'));
-        Route::put('/{event}/ubah', [EditEventAdminController::class, 'action'])->name(config('route.admin.event.edit-action'));
-        Route::any('/{event}/hapus', [DeleteEventAdminController::class, 'action'])->name(config('route.admin.event.delete-action'));
-    });
-
     // PTK
     Route::prefix('ptk')->group(function (): void {
         Route::get('/', [HomePTKAdminController::class, 'view'])->name(config('route.admin.ptk.home'));
@@ -119,6 +126,16 @@ Route::prefix('admin')->middleware('auth')->group(function (): void {
         Route::get('/{ptk}/ubah', [EditPTKAdminController::class, 'view'])->name(config('route.admin.ptk.edit'));
         Route::put('/{ptk}/ubah', [EditPTKAdminController::class, 'action'])->name(config('route.admin.ptk.edit-action'));
         Route::any('/{ptk}/hapus', [DeletePTKAdminController::class, 'action'])->name(config('route.admin.ptk.delete-action'));
+    });
+
+    // Student
+    Route::prefix('siswa')->group(function (): void {
+        Route::get('/', [HomeStudentAdminController::class, 'view'])->name(config('route.admin.student.home'));
+        Route::get('/tambah', [AddStudentAdminController::class, 'view'])->name(config('route.admin.student.add'));
+        Route::post('/tambah', [AddStudentAdminController::class, 'action'])->name(config('route.admin.student.add-action'));
+        Route::get('/{student}/ubah', [EditStudentAdminController::class, 'view'])->name(config('route.admin.student.edit'));
+        Route::put('/{student}/ubah', [EditStudentAdminController::class, 'action'])->name(config('route.admin.student.edit-action'));
+        Route::any('/{student}/hapus', [DeleteStudentAdminController::class, 'action'])->name(config('route.admin.student.delete-action'));
     });
 
     // Achievement

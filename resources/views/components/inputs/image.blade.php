@@ -1,4 +1,11 @@
-@props(['placeholder' => 'Pilih File', 'label' => '', 'value' => '', 'name' => '', 'id'])
+@props([
+    'placeholder' => 'Pilih File',
+    'required' => false,
+    'label' => '',
+    'value' => '',
+    'name' => '',
+    'id',
+])
 
 <label for="{{ $id ?? $name }}" class="flex flex-col gap-1.5" x-data="{
     previewImage: `{{ $value }}`,
@@ -13,6 +20,11 @@
 }">
     <p>
         {{ $label }}
+
+        @if ((bool) $required !== false)
+            <span class="text-red-500">*</span>
+        @endif
+
     </p>
     <div @class([
         'flex h-60 items-center justify-center rounded-lg border-2 border-dashed p-3' => true,

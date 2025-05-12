@@ -15,6 +15,9 @@ return [
         'about-ptk' => 'about.ptk.*',
         'about-ptk-home' => 'about.ptk.home',
         'about-ptk-detail' => 'about.ptk.detail',
+        'about-student' => 'about.student.*',
+        'about-student-home' => 'about.student.home',
+        'about-student-detail' => 'about.student.detail',
         'program' => 'program',
         'achievement' => 'achievement.*',
         'achievement-home' => 'achievement.home',
@@ -51,6 +54,17 @@ return [
             'delete-action' => 'admin.activity.delete.action',
         ],
 
+        'student-activity' => [
+            'base' => 'admin.student-activity.*',
+
+            'home' => 'admin.student-activity.home',
+            'add' => 'admin.student-activity.add',
+            'add-action' => 'admin.student-activity.add.action',
+            'edit' => 'admin.student-activity.edit',
+            'edit-action' => 'admin.student-activity.edit.action',
+            'delete-action' => 'admin.student-activity.delete.action',
+        ],
+
         'facility' => [
             'base' => 'admin.facility.*',
 
@@ -78,17 +92,6 @@ return [
             ],
         ],
 
-        'event' => [
-            'base' => 'admin.event.*',
-
-            'home' => 'admin.event.home',
-            'add' => 'admin.event.add',
-            'add-action' => 'admin.event.add.action',
-            'edit' => 'admin.event.edit',
-            'edit-action' => 'admin.event.edit.action',
-            'delete-action' => 'admin.event.delete.action',
-        ],
-
         'ptk' => [
             'base' => 'admin.ptk.*',
 
@@ -98,6 +101,17 @@ return [
             'edit' => 'admin.ptk.edit',
             'edit-action' => 'admin.ptk.edit.action',
             'delete-action' => 'admin.ptk.delete.action',
+        ],
+
+        'student' => [
+            'base' => 'admin.student.*',
+
+            'home' => 'admin.student.home',
+            'add' => 'admin.student.add',
+            'add-action' => 'admin.student.add.action',
+            'edit' => 'admin.student.edit',
+            'edit-action' => 'admin.student.edit.action',
+            'delete-action' => 'admin.student.delete.action',
         ],
 
         'achievement' => [

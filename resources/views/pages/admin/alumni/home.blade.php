@@ -10,7 +10,6 @@
     get filteredData() {
         return this.data.filter(item => (
             this.search === '' ||
-            item.class.toLowerCase().includes(this.search.toLowerCase()) ||
             item.name.toLowerCase().includes(this.search.toLowerCase()) ||
             item.year.toLowerCase().includes(this.search.toLowerCase())
         ));
@@ -60,7 +59,6 @@
                 <tr class="text-white *:bg-cstm-green-900 *:p-1.5 first:*:rounded-tl-lg last:*:rounded-tr-lg">
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Kelas</th>
                     <th>Tahun Lulus</th>
                     <th>Aksi</th>
                 </tr>
@@ -71,7 +69,6 @@
                     <tr class="border-b *:p-1.5 last:border-none">
                         <td class="text-center" x-text="(currentPage - 1) * perpage + (index + 1)"></td>
                         <td x-text="item.name"></td>
-                        <td class="text-center" x-text="item.class"></td>
                         <td class="text-center" x-text="item.year"></td>
                         <td>
                             <div class="flex">
