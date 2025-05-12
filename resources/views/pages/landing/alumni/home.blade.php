@@ -19,14 +19,14 @@
     <div class="flex justify-center" x-data="{
         data: {{ json_encode($alumni) }},
         currentPage: 1,
-        perpage: 3,
+        perpage: 5,
         maxPage: 1,
         search: '',
         get filteredData() {
             return this.data.filter(item => (
                 this.search === '' ||
+                item.job_place.toLowerCase().includes(this.search.toLowerCase()) ||
                 item.status.toLowerCase().includes(this.search.toLowerCase()) ||
-                item.class.toLowerCase().includes(this.search.toLowerCase()) ||
                 item.phone.toLowerCase().includes(this.search.toLowerCase()) ||
                 item.name.toLowerCase().includes(this.search.toLowerCase()) ||
                 item.year.toLowerCase().includes(this.search.toLowerCase())
@@ -59,7 +59,7 @@
 
             <template x-for="item in paginatedData">
                 <div class="flex flex-wrap items-center justify-center gap-3 rounded-xl border p-4 shadow md:gap-5">
-                    <div class="aspect-[16/10] w-full rounded-xl bg-cover bg-center bg-no-repeat sm:w-72"
+                    <div class="aspect-[3/4] w-10/12 rounded-xl bg-cover bg-center bg-no-repeat sm:w-36"
                         x-bind:style="`background-image: url('/storage/${item.image}')`"></div>
                     <div class="flex w-full flex-col gap-3 sm:w-96">
                         <p x-bind:title="item.name" x-text="item.name"
@@ -78,22 +78,22 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Kelas
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td x-text="item.class" class="line-clamp-1">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     Status
                                 </td>
                                 <td>
                                     :
                                 </td>
                                 <td x-text="item.status" class="line-clamp-1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tempat
+                                </td>
+                                <td>
+                                    :
+                                </td>
+                                <td x-text="item.job_place" class="line-clamp-1">
                                 </td>
                             </tr>
                             <tr>
