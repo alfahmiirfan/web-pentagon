@@ -30,11 +30,16 @@
         <div class="flex gap-3 *:flex-1">
             <x-labels.default text="Jenis kelamin" for="gender" required="true">
                 <x-inputs.select name="gender" class="py-1.5">
+                    <option value="">
+                        Pilih Jenis Kelamin
+                    </option>
+
                     @foreach (\App\Models\Student::GetGenderValues() as $option)
                         <option value="{{ $option }}" @selected($option === old('gender'))>
                             {{ ucfirst($option) }}
                         </option>
                     @endforeach
+
                 </x-inputs.select>
             </x-labels.default>
             <x-labels.default text="No Telepon" for="phone" required="true">
@@ -45,18 +50,13 @@
             <x-labels.default text="Email" for="email" required="true">
                 <x-inputs.text name="email" placeholder="Email" />
             </x-labels.default>
-            <x-labels.default text="Cita - cita" for="dream" required="true">
-                <x-inputs.text name="dream" placeholder="Cita - cita" />
+            <x-labels.default text="Angkatan" for="generation" required="true">
+                <x-inputs.text name="generation" placeholder="Angkatan" />
             </x-labels.default>
         </div>
-        <div class="flex gap-3 *:flex-1">
-            <x-labels.default text="Alamat" for="address" required="true">
-                <x-inputs.text name="address" placeholder="Alamat" />
-            </x-labels.default>
-            <x-labels.default text="Motto hidup" for="motto" required="true">
-                <x-inputs.text name="motto" placeholder="Motto hidup" />
-            </x-labels.default>
-        </div>
+        <x-labels.default text="Alamat" for="address" required="true">
+            <x-inputs.text name="address" placeholder="Alamat" />
+        </x-labels.default>
         <x-inputs.image label="Foto Siswa" name="image" required="true" />
 
         @error('error')

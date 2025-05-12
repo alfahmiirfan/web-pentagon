@@ -29,12 +29,11 @@ class AddStudentAdminController extends Controller
     {
         [
             'birth_place' => $brithPlaceReq,
+            'generation' => $generationReq,
             'birth_date' => $brithDateReq,
             'address' => $addressReq,
             'gender' => $genderReq,
-            'dream' => $dreamReq,
             'email' => $emailReq,
-            'motto' => $mottoReq,
             'phone' => $phoneReq,
             'name' => $nameReq,
             'nisn' => $nisnReq,
@@ -51,12 +50,11 @@ class AddStudentAdminController extends Controller
 
             Student::create([
                 'birth_place' => $brithPlaceReq,
+                'generation' => $generationReq,
                 'birth_date' => $brithDateReq,
                 'address' => $addressReq,
                 'gender' => $genderReq,
-                'dream' => $dreamReq,
                 'email' => $emailReq,
-                'motto' => $mottoReq,
                 'phone' => $phoneReq,
                 'name' => $nameReq,
                 'nisn' => $nisnReq,

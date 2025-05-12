@@ -19,14 +19,13 @@ return new class extends Migration {
             $table->string('birth_place', 255)->nullable();
             $table->date('birth_date')->nullable();
             $table->string('phone', 25)->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('generation', 255)->nullable();
+            $table->string('address', 255)->nullable();
             $table->enum('gender', [
                 Student::GENDER_FEMALE,
                 Student::GENDER_MALE,
             ])->nullable();
-            $table->string('email', 255)->nullable();
-            $table->string('dream', 255)->nullable();
-            $table->string('address', 255)->nullable();
-            $table->string('motto', 255)->nullable();
             $table->text('image')->nullable();
 
             $table->timestamps();

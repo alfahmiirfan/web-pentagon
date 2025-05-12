@@ -20,6 +20,17 @@
             <table>
                 <tr>
                     <td class="whitespace-nowrap font-bold">
+                        Angkatan
+                    </td>
+                    <td class="px-2.5 font-bold">
+                        :
+                    </td>
+                    <td class="w-full">
+                        {{ $student->generation }}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="whitespace-nowrap font-bold">
                         Jenis Kelamin
                     </td>
                     <td class="px-2.5 font-bold">
@@ -73,24 +84,7 @@
                         {{ $student->address }}
                     </td>
                 </tr>
-                <tr>
-                    <td class="whitespace-nowrap font-bold">
-                        Cita - cita
-                    </td>
-                    <td class="px-2.5 font-bold">
-                        :
-                    </td>
-                    <td class="w-full">
-                        {{ $student->dream }}
-                    </td>
-                </tr>
             </table>
-            <p title="Motto Hidup" class="font-bold text-cstm-blue-900">
-                Motto Hidup
-            </p>
-            <p>
-                {{ $student->motto }}
-            </p>
         </div>
     </div>
 
