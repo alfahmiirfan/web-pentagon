@@ -24,13 +24,13 @@
     <div class="flex flex-col">
         <div class="flex w-full flex-1 items-center justify-center">
             <div class="flex w-full max-w-screen-xl flex-col items-start justify-center gap-3 p-5 2xl:max-w-screen-2xl">
-                <p title="Budianto Sp.d" class="text-xl font-bold text-cstm-blue-900 md:text-3xl">
-                    Budianto Sp.d
+                <p title="Yeye Hendri, M.Pd" class="text-xl font-bold text-cstm-blue-900 md:text-3xl">
+                    Yeye Hendri, M.Pd
                 </p>
                 <p title="Kepala Sekolah" class="text-gray-500 max-md:text-sm">
                     Kepala Sekolah
                 </p>
-                <img src="/images/landing/students.jpg" alt=""
+                <img src="/images/landing/kepsek.jpg" alt=""
                     class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg">
             </div>
         </div>
