@@ -1,6 +1,6 @@
 <x-layouts.landing title="Beranda | {{ config('app.name') }}">
 
-    <div class="flex flex-col bg-cover bg-center bg-no-repeat" style="background-image: url('/images/landing/hero.jpg')">
+    <div class="flex flex-col bg-cover bg-center bg-no-repeat" data-background-image="/images/landing/hero.jpg">
         <div class="flex min-h-screen w-full flex-1 items-center justify-center bg-black/50">
             <div
                 class="flex w-full max-w-screen-xl flex-col items-center justify-center gap-8 p-5 pt-20 md:gap-10 lg:gap-12 2xl:max-w-screen-2xl">
@@ -30,8 +30,8 @@
                 <p title="Kepala Sekolah" class="text-gray-500 max-md:text-sm">
                     Kepala Sekolah
                 </p>
-                <img src="/images/landing/kepsek.jpg" alt=""
-                    class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg">
+                <img src="/images/landing/kepsek.jpg" loading="lazy" alt=""
+                    class="mx-auto max-h-screen max-w-full rounded-lg">
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
                         </button>
                     </div>
                     <div class="flex w-full items-center justify-center">
-                        <img x-bind:src="`/storage/${item.image}`" alt=""
+                        <img x-bind:src="`/storage/${item.image}`" loading="lazy" alt=""
                             class="mx-auto aspect-auto h-full max-h-screen max-w-full rounded-lg shadow">
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                 <a href="{{ route(config('route.landing.program')) }}#nanotechnology"
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Nanotechnology" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/program-nano.jpg')">
+                        data-background-image="/images/landing/program-nano.jpg">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4 max-sm:text-sm">
                         <h6 title="Nanotechnology" class="font-medium">
@@ -117,7 +117,7 @@
                 <a href="{{ route(config('route.landing.program')) }}#biotechnology"
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Biotechnology" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/program-bio.jpg')">
+                        data-background-image="/images/landing/program-bio.jpg">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4 max-sm:text-sm">
                         <h6 title="Biotechnology" class="font-medium">
@@ -131,7 +131,7 @@
                 <a href="{{ route(config('route.landing.program')) }}#robotic"
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Robotic" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/program-robotic.jpg')">
+                        data-background-image="/images/landing/program-robotic.jpg">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4 max-sm:text-sm">
                         <h6 title="Robotic" class="font-medium">
@@ -145,7 +145,7 @@
                 <a href="{{ route(config('route.landing.program')) }}#energy"
                     class="flex aspect-[5/3] flex-col items-end justify-center overflow-hidden rounded-b-sm rounded-t-lg bg-white text-white">
                     <div title="Renewable Energy" class="h-full w-full bg-cover bg-center bg-no-repeat"
-                        style="background-image: url('/images/landing/program-energy.jpg')">
+                        data-background-image="/images/landing/program-energy.jpg">
                     </div>
                     <div class="w-full bg-cstm-blue-900 px-3 py-4 max-sm:text-sm">
                         <h6 title="Renewable Energy" class="font-medium">
@@ -164,5 +164,17 @@
             </a>
         </div>
     </div>
+
+    @push('scripts')
+        <script>
+            let lazyImages = document.querySelectorAll('[data-background-image]');
+
+            window.onload = () => {
+                lazyImages.forEach(element => {
+                    element.style.backgroundImage = `url('${element.dataset.backgroundImage}')`;
+                });
+            }
+        </script>
+    @endpush
 
 </x-layouts.landing>
